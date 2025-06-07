@@ -1,7 +1,6 @@
 <template>
   <div class="page">
     <header class="header">
-      <div class="header__texture"></div>
       
       <nav class="header__nav">
         <div class="header__container">
@@ -78,20 +77,7 @@ body {
 .header {
   position: relative;
   z-index: 30;
-  background: linear-gradient(to right, #374151, #111827, #334155);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.header__texture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.1;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
-  background-size: 20px 20px;
-  pointer-events: none;
+  box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.1), 0 4px 6px -2px rgba(236, 72, 153, 0.05);
 }
 
 .header__nav {
@@ -111,15 +97,16 @@ body {
 /* Logo Element */
 .header__logo {
   font-size: 1.5rem;
-  font-weight: 300;
-  color: white;
+  font-weight: 600;
+  color: #111827;
   text-decoration: none;
   letter-spacing: 0.1em;
   transition: color 0.3s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .header__logo:hover {
-  color: #d1d5db;
+  color: #374151;
 }
 
 /* Menu Element */
@@ -131,15 +118,15 @@ body {
 
 .header__menu-item {
   position: relative;
-  color: #d1d5db;
+  color: #374151;
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.1em;
   transition: color 0.3s ease;
 }
 
 .header__menu-item:hover {
-  color: white;
+  color: #111827;
 }
 
 .header__menu-item:hover .header__menu-underline {
@@ -156,27 +143,27 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #fbbf24, #f59e0b);
+  background: linear-gradient(to right, #db2777, #be185d);
   transition: width 0.3s ease;
 }
 
 /* Button Element */
 .header__button {
   margin-left: 2rem;
-  padding: 0.5rem 1.5rem;
-  background: transparent;
-  border: 1px solid #fbbf24;
-  color: #fbbf24;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #ec4899, #db2777);
+  border: none;
+  color: white;
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.1em;
   font-size: 0.875rem;
   transition: all 0.3s ease;
 }
 
 .header__button:hover {
-  background: #fbbf24;
-  color: #111827;
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #db2777, #be185d);
 }
 
 /* Mobile Toggle Element */
@@ -184,13 +171,13 @@ body {
   display: block;
   background: none;
   border: none;
-  color: #d1d5db;
+  color: #374151;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .header__mobile-toggle:hover {
-  color: white;
+  color: #111827;
 }
 
 .header__mobile-icon {

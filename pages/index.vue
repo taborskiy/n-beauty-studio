@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero__texture"></div>
-      <div class="hero__gradient"></div>
+      <div class="hero__background"></div>
       
       <div class="hero__container">
         <!-- Hero content -->
@@ -11,16 +11,28 @@
           <!-- Left content -->
           <div class="hero__text-section">
             <div class="hero__text-wrapper">
+              <!-- Small Promotional Tags -->
+              <div class="hero__tags">
+                <div class="hero__tag hero__tag--sale">
+                  <div class="hero__tag-badge">ACTION</div>
+                </div>
+
+                <div class="hero__tag hero__tag--price">
+                  <div class="hero__tag-badge">PRICE</div>
+                </div>
+              </div>
+
               <h1 class="hero__title">
-                <span class="hero__title-main">Luxury Beauty</span>
-                <span class="hero__title-sub">Experience</span>
+                <span class="hero__title-main">Permanent Makeup</span>
               </h1>
               
               <div class="hero__divider"></div>
               
               <p class="hero__description">
-                Where sophisticated beauty meets unparalleled expertise. 
-                Discover the art of transformation in our exclusive studio sanctuary.
+                permanent makeup, tattoo, eyelash extension, eyebrow, lip. New action! for your beauty!
+                <span class="hero__pricing">
+                   <span class="hero__price-new">120₴</span> <span class="hero__price-old">180₴</span>
+                </span>
               </p>
             </div>
 
@@ -31,41 +43,31 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
               </NuxtLink>
-              
-              <button class="hero__button hero__button--secondary">
-                <span class="hero__button-text">STUDIO TOUR</span>
-                <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </button>
+            
             </div>
           </div>
 
           <!-- Right side navigation -->
           <div class="hero__sidebar">
             <div class="hero__sidebar-wrapper">
-              <!-- Vertical address text -->
-              <div class="hero__address">
-                1234 BEAUTY BOULEVARD
-              </div>
               
               <!-- Side navigation -->
               <div class="hero__nav">
                 <div class="hero__nav-item hero__nav-item--active">
                   <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Hair Salon</span>
+                  <span class="hero__nav-text">Permanent Makeup</span>
                 </div>
                 <div class="hero__nav-item">
                   <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Nail Studio</span>
+                  <span class="hero__nav-text">Eyelash Extension</span>
                 </div>
                 <div class="hero__nav-item">
                   <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Facial Spa</span>
+                  <span class="hero__nav-text">Eyebrow</span>
                 </div>
                 <div class="hero__nav-item">
                   <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Massage Room</span>
+                  <span class="hero__nav-text">Lip</span>
                 </div>
               </div>
             </div>
@@ -77,6 +79,54 @@
           <div class="hero__scroll-wrapper">
             <span class="hero__scroll-text">SCROLL</span>
             <div class="hero__scroll-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us section">
+      <div class="container">
+        <div class="why-us__header">
+          <h2 class="section__title">Why Us</h2>
+          <div class="section__divider"></div>
+        </div>
+        <div class="why-us__grid">
+          <div class="why-us__item">
+            <div class="why-us__icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3>Value</h3>
+            <p>Laser treatments at traditional pricing. Fixed rate for the entire course. You pay the same amount for each visit.</p>
+          </div>
+          <div class="why-us__item">
+            <div class="why-us__icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3>Equipment</h3>
+            <p>Diode laser devices created in 2024. Custom order and manufacturing in the USA (Texas) for premium beauty studios.</p>
+          </div>
+          <div class="why-us__item">
+            <div class="why-us__icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3>Quality</h3>
+            <p>Standardized processes, monthly equipment maintenance, certified specialists with medical education, individual treatment protocols.</p>
+          </div>
+          <div class="why-us__item">
+            <div class="why-us__icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3>Studios</h3>
+            <p>Comfortable studios with quality disposable materials and high-level service standards in every location.</p>
           </div>
         </div>
       </div>
@@ -175,59 +225,54 @@
     <section class="process section">
       <div class="container">
         <div class="process__header">
-          <h2 class="section__title">Work Process</h2>
+          <h2 class="section__title">Process</h2>
           <div class="section__divider"></div>
-          <p class="section__subtitle">Individual approach to each client with high quality guarantee</p>
+          <p class="section__subtitle">Advantages of working with us</p>
         </div>
         <div class="process__content">
-          <div class="process__steps">
-            <div class="process__step">
-              <div class="process__step-number">01</div>
-              <h3>Consultation</h3>
-              <p>Detailed skin condition analysis and discussion of your wishes. Selection of individual treatment program.</p>
-            </div>
-            <div class="process__step">
-              <div class="process__step-number">02</div>
-              <h3>Preparation</h3>
-              <p>Cleansing and preparing the skin for the procedure. Application of numbing agents when necessary.</p>
-            </div>
-            <div class="process__step">
-              <div class="process__step-number">03</div>
-              <h3>Procedure</h3>
-              <p>Performing the procedure using professional equipment and quality materials.</p>
-            </div>
-            <div class="process__step">
-              <div class="process__step-number">04</div>
-              <h3>Aftercare</h3>
-              <p>Post-procedure care and home care recommendations to achieve the best results.</p>
-            </div>
-          </div>
           <div class="process__advantages">
-            <h3>Advantages of Working with Me</h3>
             <div class="advantages__grid">
               <div class="advantage__item">
-                <div class="advantage__icon">✨</div>
-                <span>Individual Approach</span>
+                <div class="advantage__number">1</div>
+                <div class="advantage__content">
+                  <h4>Individual Approach</h4>
+                  <p>Every client receives a personalized consultation and treatment plan tailored to their unique needs and skin type.</p>
+                </div>
               </div>
               <div class="advantage__item">
-                <div class="advantage__icon">🎯</div>
-                <span>High Professionalism</span>
+                <div class="advantage__number">2</div>
+                <div class="advantage__content">
+                  <h4>High Professionalism</h4>
+                  <p>8+ years of experience, certified qualifications, and continuous education in the latest beauty techniques.</p>
+                </div>
               </div>
               <div class="advantage__item">
-                <div class="advantage__icon">💎</div>
-                <span>Premium Materials</span>
+                <div class="advantage__number">3</div>
+                <div class="advantage__content">
+                  <h4>Premium Materials</h4>
+                  <p>Only top-quality, hypoallergenic pigments and materials from leading international brands are used.</p>
+                </div>
               </div>
               <div class="advantage__item">
-                <div class="advantage__icon">⚡</div>
-                <span>Quick Results</span>
+                <div class="advantage__number">4</div>
+                <div class="advantage__content">
+                  <h4>Quick Results</h4>
+                  <p>See immediate improvements with long-lasting effects that save you time on daily makeup routine.</p>
+                </div>
               </div>
               <div class="advantage__item">
-                <div class="advantage__icon">🛡️</div>
-                <span>Quality Guarantee</span>
+                <div class="advantage__number">5</div>
+                <div class="advantage__content">
+                  <h4>Quality Guarantee</h4>
+                  <p>Free touch-up included within 6 weeks and full satisfaction guarantee for all permanent makeup procedures.</p>
+                </div>
               </div>
               <div class="advantage__item">
-                <div class="advantage__icon">💝</div>
-                <span>Comfortable Atmosphere</span>
+                <div class="advantage__number">6</div>
+                <div class="advantage__content">
+                  <h4>Comfortable Atmosphere</h4>
+                  <p>Relaxing, private studio environment with modern amenities to ensure your complete comfort during treatments.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -513,18 +558,62 @@ const toggleFaq = (index) => {
 .hero {
   position: relative;
   height: 100vh;
-  background: linear-gradient(135deg, #374151 0%, #111827 50%, #334155 100%);
+  background: linear-gradient(135deg, #000000 0%, #ff5172 50%, #c61562 100%);
   overflow: hidden;
 }
 
-.hero__texture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.2;
-  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+/* Hero Tags */
+.hero__tags {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero__tag {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hero__tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero__tag-badge {
+  background: #ec4899;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Description Pricing */
+.hero__pricing {
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.hero__price-new {
+  color: #ec4899;
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-right: 0.5rem;
+}
+
+.hero__price-old {
+  color: #d5d5d5;
+  text-decoration: line-through;
+  font-size: 1.7rem;
 }
 
 .hero__gradient {
@@ -536,6 +625,17 @@ const toggleFaq = (index) => {
   opacity: 0.1;
   background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
   background-size: 20px 20px;
+}
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.7;
+  background-image: url('/images/hero_bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero__container {
@@ -583,16 +683,10 @@ const toggleFaq = (index) => {
   display: block;
 }
 
-.hero__title-sub {
-  display: block;
-  font-weight: 300;
-  color: #d1d5db;
-}
-
 .hero__divider {
   width: 6rem;
   height: 2px;
-  background: linear-gradient(to right, #fbbf24, #f59e0b);
+  background: linear-gradient(to right, #ec4899, #db2777);
 }
 
 .hero__description {
@@ -636,15 +730,6 @@ const toggleFaq = (index) => {
   color: #111827;
 }
 
-.hero__button--secondary {
-  background: transparent;
-  color: #d1d5db;
-}
-
-.hero__button--secondary:hover {
-  color: white;
-}
-
 .hero__button-text {
   margin-right: 0.5rem;
 }
@@ -659,10 +744,6 @@ const toggleFaq = (index) => {
   transform: translateX(0.25rem);
 }
 
-.hero__button--secondary:hover .hero__button-icon {
-  transform: scale(1.1);
-}
-
 /* Sidebar */
 .hero__sidebar {
   display: none;
@@ -674,17 +755,6 @@ const toggleFaq = (index) => {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-
-.hero__address {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  color: #9ca3af;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  font-size: 0.875rem;
-  margin-bottom: 3rem;
 }
 
 /* Navigation */
@@ -707,7 +777,7 @@ const toggleFaq = (index) => {
 }
 
 .hero__nav-item:hover .hero__nav-dot {
-  background: #fbbf24;
+  background: #ec4899;
 }
 
 .hero__nav-item:hover .hero__nav-text {
@@ -753,7 +823,7 @@ const toggleFaq = (index) => {
 }
 
 .hero__scroll-text {
-  color: #9ca3af;
+  color: #ffffff;
   font-size: 0.75rem;
   font-weight: 300;
   letter-spacing: 0.2em;
@@ -762,7 +832,7 @@ const toggleFaq = (index) => {
 .hero__scroll-line {
   width: 1px;
   height: 3rem;
-  background: linear-gradient(to bottom, #9ca3af, transparent);
+  background: linear-gradient(to bottom, #ffffff, transparent);
 }
 
 /* Desktop Styles */
@@ -784,6 +854,18 @@ const toggleFaq = (index) => {
     flex-direction: row;
   }
 
+  .why-us__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .equipment__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .reviews__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Tablet Styles */
@@ -803,7 +885,7 @@ const toggleFaq = (index) => {
 }
 
 .section--dark {
-  background: linear-gradient(135deg, #374151 0%, #111827 50%, #334155 100%);
+  background: linear-gradient(135deg, #591b5f 0%, #140016 33%, #992c61 150%);
   color: white;
 }
 
@@ -828,7 +910,7 @@ const toggleFaq = (index) => {
 .section__divider {
   width: 6rem;
   height: 2px;
-  background: linear-gradient(to right, #fbbf24, #f59e0b);
+  background: linear-gradient(to right, #ec4899, #db2777);
   margin: 0 auto 2rem;
 }
 
@@ -871,8 +953,8 @@ const toggleFaq = (index) => {
   position: absolute;
   bottom: -1rem;
   right: 1rem;
-  background: #fbbf24;
-  color: #111827;
+  background: #ec4899;
+  color: white;
   padding: 1.5rem;
   border-radius: 0.5rem;
   text-align: center;
@@ -929,8 +1011,74 @@ const toggleFaq = (index) => {
   content: '✓';
   position: absolute;
   left: 0;
-  color: #fbbf24;
+  color: #ec4899;
   font-weight: bold;
+}
+
+/* Why Us Section */
+.why-us__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.why-us__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-us__item {
+  text-align: center;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+}
+
+.why-us__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  border-color: #ec4899;
+}
+
+.why-us__icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: #ec4899;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.why-us__item:hover .why-us__icon {
+  background: #ec4899;
+  color: white;
+  transform: scale(1.1);
+}
+
+.why-us__icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.why-us__item h3 {
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.why-us__item p {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* Equipment Section */
@@ -961,7 +1109,7 @@ const toggleFaq = (index) => {
   width: 4rem;
   height: 4rem;
   margin: 0 auto 1.5rem;
-  color: #fbbf24;
+  color: #ec4899;
 }
 
 .equipment__icon svg {
@@ -993,73 +1141,64 @@ const toggleFaq = (index) => {
   gap: 4rem;
 }
 
-.process__steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.process__step {
-  display: flex;
+.process__advantages {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
-  align-items: flex-start;
-}
-
-.process__step-number {
-  background: #fbbf24;
-  color: #111827;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.process__step h3 {
-  color: #111827;
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.process__step p {
-  color: #6b7280;
-  line-height: 1.6;
-}
-
-.process__advantages h3 {
-  color: #111827;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  text-align: center;
 }
 
 .advantages__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .advantage__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background: #f9fafb;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
 }
 
-.advantage__icon {
-  font-size: 1.5rem;
+.advantage__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #ec4899;
 }
 
-.advantage__item span {
-  color: #374151;
-  font-weight: 500;
+.advantage__number {
+  background: #ec4899;
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.advantage__content {
+  flex: 1;
+}
+
+.advantage__content h4 {
+  color: #111827;
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.advantage__content p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 /* FAQ Section */
@@ -1087,7 +1226,7 @@ const toggleFaq = (index) => {
 }
 
 .faq__question:hover {
-  color: #fbbf24;
+  color: #ec4899;
 }
 
 .faq__question h3 {
@@ -1099,7 +1238,7 @@ const toggleFaq = (index) => {
 .faq__toggle {
   font-size: 1.5rem;
   font-weight: 300;
-  color: #fbbf24;
+  color: #ec4899;
 }
 
 .faq__answer {
@@ -1109,7 +1248,7 @@ const toggleFaq = (index) => {
 }
 
 .faq__item--active .faq__question {
-  color: #fbbf24;
+  color: #ec4899;
 }
 
 /* Pricing Section */
@@ -1136,7 +1275,7 @@ const toggleFaq = (index) => {
   font-weight: 500;
   margin-bottom: 2rem;
   text-align: center;
-  border-bottom: 2px solid #fbbf24;
+  border-bottom: 2px solid #ec4899;
   padding-bottom: 1rem;
 }
 
@@ -1170,7 +1309,7 @@ const toggleFaq = (index) => {
 }
 
 .pricing__service-price {
-  color: #fbbf24;
+  color: #ec4899;
   font-weight: 600;
   font-size: 1.125rem;
   flex-shrink: 0;
@@ -1274,7 +1413,7 @@ const toggleFaq = (index) => {
 .contact__icon {
   width: 2rem;
   height: 2rem;
-  color: #fbbf24;
+  color: #ec4899;
   flex-shrink: 0;
 }
 
@@ -1307,13 +1446,13 @@ const toggleFaq = (index) => {
 }
 
 .social__link {
-  color: #fbbf24;
+  color: #ec4899;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .social__link:hover {
-  color: #f59e0b;
+  color: #db2777;
 }
 
 .contacts__form {
@@ -1350,12 +1489,12 @@ const toggleFaq = (index) => {
 .contact__form select:focus,
 .contact__form textarea:focus {
   outline: none;
-  border-color: #fbbf24;
+  border-color: #ec4899;
 }
 
 .form__submit {
-  background: #fbbf24;
-  color: #111827;
+  background: #ec4899;
+  color: white;
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.5rem;
@@ -1365,7 +1504,7 @@ const toggleFaq = (index) => {
 }
 
 .form__submit:hover {
-  background: #f59e0b;
+  background: #db2777;
 }
 
 /* Responsive Design */
@@ -1379,16 +1518,16 @@ const toggleFaq = (index) => {
     grid-template-columns: 1fr 1fr;
   }
 
+  .why-us__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .equipment__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .process__content {
     grid-template-columns: 1fr;
-  }
-
-  .process__steps {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .advantages__grid {
@@ -1416,17 +1555,14 @@ const toggleFaq = (index) => {
   }
 }
 
-@media (min-width: 1024px) {
-  .equipment__grid {
-    grid-template-columns: repeat(4, 1fr);
+@media (max-width: 767px) {
+  .why-us__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  .process__steps {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .reviews__grid {
-    grid-template-columns: repeat(3, 1fr);
+  .why-us__item {
+    padding: 1.5rem;
   }
 }
 </style> 
