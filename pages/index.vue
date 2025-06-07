@@ -137,7 +137,7 @@
       <div class="container">
         <div class="about-me__content">
           <div class="about-me__image">
-            <img src="" alt="Beauty Master" class="about-me__photo">
+            <img src="/images/about.png" alt="Beauty Master" class="about-me__photo">
             <div class="about-me__experience">
               <span class="about-me__years">8+</span>
               <span class="about-me__text">years of experience</span>
@@ -939,14 +939,16 @@ const toggleFaq = (index) => {
 .about-me__image {
   position: relative;
   text-align: center;
+  height: 100%;
 }
 
 .about-me__photo {
-  width: 300px;
-  height: 400px;
   object-fit: cover;
   border-radius: 1rem;
   filter: grayscale(20%);
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .about-me__experience {
