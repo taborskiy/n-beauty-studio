@@ -13,10 +13,6 @@
               <span class="header__menu-text">Home</span>
               <div class="header__menu-underline"></div>
             </NuxtLink>
-            <NuxtLink to="/gallery" class="header__menu-item">
-              <span class="header__menu-text">Gallery</span>
-              <div class="header__menu-underline"></div>
-            </NuxtLink>
             <NuxtLink to="/prices" class="header__menu-item">
               <span class="header__menu-text">Prices</span>
               <div class="header__menu-underline"></div>
