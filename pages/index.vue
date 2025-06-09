@@ -6,81 +6,184 @@
       <div class="hero__background"></div>
       
       <div class="hero__container">
-        <!-- Hero content -->
-        <div class="hero__content">
-          <!-- Left content -->
-          <div class="hero__text-section">
-            <div class="hero__text-wrapper">
-              <!-- Small Promotional Tags -->
-              <div class="hero__tags">
-                <div class="hero__tag hero__tag--sale">
-                  <div class="hero__tag-badge">ACTION</div>
+        <!-- Swiper -->
+        <Swiper
+          :modules="modules"
+          :slides-per-view="1"
+          :space-between="0"
+          :loop="true"
+          :direction="'vertical'"
+          :pagination="{ 
+            clickable: true,
+            renderBullet: renderCustomBullet
+          }"
+          class="hero__swiper"
+          @swiper="onSwiper"
+          @slideChange="onSlideChange"
+        >
+          <!-- Slide 1 - Permanent Makeup -->
+          <SwiperSlide>
+            <div class="hero__content">
+              <!-- Left content -->
+              <div class="hero__text-section">
+                <div class="hero__text-wrapper">
+                  <!-- Small Promotional Tags -->
+                  <div class="hero__tags">
+                    <div class="hero__tag hero__tag--sale">
+                      <div class="hero__tag-badge">ACTION</div>
+                    </div>
+
+                    <div class="hero__tag hero__tag--price">
+                      <div class="hero__tag-badge">PRICE</div>
+                    </div>
+                  </div>
+
+                  <h1 class="hero__title">
+                    <span class="hero__title-main">Permanent Makeup</span>
+                  </h1>
+                  
+                  <div class="hero__divider"></div>
+                  
+                  <p class="hero__description">
+                    permanent makeup, tattoo, eyelash extension, eyebrow, lip. New action! for your beauty!
+                    <span class="hero__pricing">
+                       <span class="hero__price-new">120₴</span> <span class="hero__price-old">180₴</span>
+                    </span>
+                  </p>
                 </div>
 
-                <div class="hero__tag hero__tag--price">
-                  <div class="hero__tag-badge">PRICE</div>
-                </div>
-              </div>
-
-              <h1 class="hero__title">
-                <span class="hero__title-main">Permanent Makeup</span>
-              </h1>
-              
-              <div class="hero__divider"></div>
-              
-              <p class="hero__description">
-                permanent makeup, tattoo, eyelash extension, eyebrow, lip. New action! for your beauty!
-                <span class="hero__pricing">
-                   <span class="hero__price-new">120₴</span> <span class="hero__price-old">180₴</span>
-                </span>
-              </p>
-            </div>
-
-            <div class="hero__actions">
-              <NuxtLink to="/contacts" class="hero__button hero__button--primary">
-                <span class="hero__button-text">BOOK CONSULTATION</span>
-                <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </NuxtLink>
-            
-            </div>
-          </div>
-
-          <!-- Right side navigation -->
-          <div class="hero__sidebar">
-            <div class="hero__sidebar-wrapper">
-              
-              <!-- Side navigation -->
-              <div class="hero__nav">
-                <div class="hero__nav-item hero__nav-item--active">
-                  <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Permanent Makeup</span>
-                </div>
-                <div class="hero__nav-item">
-                  <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Eyelash Extension</span>
-                </div>
-                <div class="hero__nav-item">
-                  <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Eyebrow</span>
-                </div>
-                <div class="hero__nav-item">
-                  <div class="hero__nav-dot"></div>
-                  <span class="hero__nav-text">Lip</span>
+                <div class="hero__actions">
+                  <NuxtLink to="/contacts" class="hero__button hero__button--primary">
+                    <span class="hero__button-text">BOOK CONSULTATION</span>
+                    <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </NuxtLink>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </SwiperSlide>
 
-        <!-- Scroll indicator -->
-        <div class="hero__scroll">
-          <div class="hero__scroll-wrapper">
-            <span class="hero__scroll-text">SCROLL</span>
-            <div class="hero__scroll-line"></div>
-          </div>
-        </div>
+          <!-- Slide 2 - Eyelash Extension -->
+          <SwiperSlide>
+            <div class="hero__content">
+              <div class="hero__text-section">
+                <div class="hero__text-wrapper">
+                  <div class="hero__tags">
+                    <div class="hero__tag hero__tag--sale">
+                      <div class="hero__tag-badge">NEW</div>
+                    </div>
+                    <div class="hero__tag hero__tag--price">
+                      <div class="hero__tag-badge">HOT</div>
+                    </div>
+                  </div>
+
+                  <h1 class="hero__title">
+                    <span class="hero__title-main">Eyelash Extension</span>
+                  </h1>
+                  
+                  <div class="hero__divider"></div>
+                  
+                  <p class="hero__description">
+                    Professional eyelash extension services. Volume, classic, hybrid techniques available.
+                    <span class="hero__pricing">
+                       <span class="hero__price-new">800₴</span> <span class="hero__price-old">1200₴</span>
+                    </span>
+                  </p>
+                </div>
+
+                <div class="hero__actions">
+                  <NuxtLink to="/contacts" class="hero__button hero__button--primary">
+                    <span class="hero__button-text">BOOK NOW</span>
+                    <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <!-- Slide 3 - Eyebrow Services -->
+          <SwiperSlide>
+            <div class="hero__content">
+              <div class="hero__text-section">
+                <div class="hero__text-wrapper">
+                  <div class="hero__tags">
+                    <div class="hero__tag hero__tag--sale">
+                      <div class="hero__tag-badge">PROMO</div>
+                    </div>
+                    <div class="hero__tag hero__tag--price">
+                      <div class="hero__tag-badge">BEST</div>
+                    </div>
+                  </div>
+
+                  <h1 class="hero__title">
+                    <span class="hero__title-main">Eyebrow Styling</span>
+                  </h1>
+                  
+                  <div class="hero__divider"></div>
+                  
+                  <p class="hero__description">
+                    Professional eyebrow shaping, tinting, and styling services for perfect brows.
+                    <span class="hero__pricing">
+                       <span class="hero__price-new">300₴</span> <span class="hero__price-old">450₴</span>
+                    </span>
+                  </p>
+                </div>
+
+                <div class="hero__actions">
+                  <NuxtLink to="/contacts" class="hero__button hero__button--primary">
+                    <span class="hero__button-text">GET PERFECT BROWS</span>
+                    <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          <!-- Slide 4 - Lip Services -->
+          <SwiperSlide>
+            <div class="hero__content">
+              <div class="hero__text-section">
+                <div class="hero__text-wrapper">
+                  <div class="hero__tags">
+                    <div class="hero__tag hero__tag--sale">
+                      <div class="hero__tag-badge">LUXURY</div>
+                    </div>
+                    <div class="hero__tag hero__tag--price">
+                      <div class="hero__tag-badge">TOP</div>
+                    </div>
+                  </div>
+
+                  <h1 class="hero__title">
+                    <span class="hero__title-main">Lip Enhancement</span>
+                  </h1>
+                  
+                  <div class="hero__divider"></div>
+                  
+                  <p class="hero__description">
+                    Professional lip enhancement, permanent lip makeup, and lip care treatments.
+                    <span class="hero__pricing">
+                       <span class="hero__price-new">950₴</span> <span class="hero__price-old">1400₴</span>
+                    </span>
+                  </p>
+                </div>
+
+                <div class="hero__actions">
+                  <NuxtLink to="/contacts" class="hero__button hero__button--primary">
+                    <span class="hero__button-text">BEAUTIFUL LIPS</span>
+                    <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </section>
 
@@ -445,6 +548,45 @@
 
 <script setup>
 import { ref } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation, Pagination } from 'swiper/modules'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+// Swiper modules
+const modules = [Navigation, Pagination]
+
+// Swiper functionality
+const swiperInstance = ref(null)
+const activeSlide = ref(0)
+
+// Navigation items data
+const navigationItems = [
+  'Permanent Makeup',
+  'Eyelash Extension', 
+  'Eyebrow',
+  'Lip'
+]
+
+const renderCustomBullet = (index, className) => {
+  return `
+    <div class="${className} hero__nav-item">
+      <div class="hero__nav-dot"></div>
+      <span class="hero__nav-text">${navigationItems[index]}</span>
+    </div>
+  `
+}
+
+const onSwiper = (swiper) => {
+  swiperInstance.value = swiper
+}
+
+const onSlideChange = (swiper) => {
+  activeSlide.value = swiper.realIndex
+}
 
 // FAQ data
 const activeFaq = ref(null)
@@ -562,6 +704,16 @@ const toggleFaq = (index) => {
   overflow: hidden;
 }
 
+/* Hero Swiper */
+.hero__swiper {
+  height: 100%;
+  width: 100%;
+}
+
+.hero__swiper .swiper-wrapper {
+  transition-timing-function: ease-in-out;
+}
+
 /* Hero Tags */
 .hero__tags {
   display: flex;
@@ -655,6 +807,8 @@ const toggleFaq = (index) => {
   height: calc(100vh - 200px);
   align-items: center;
   padding-top: 70px;
+  justify-items: start;
+  max-width: 800px;
 }
 
 .hero__text-section {
@@ -744,110 +898,10 @@ const toggleFaq = (index) => {
   transform: translateX(0.25rem);
 }
 
-/* Sidebar */
-.hero__sidebar {
-  display: none;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.hero__sidebar-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Navigation */
-.hero__nav {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.hero__nav-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.hero__nav-item:hover {
-  transform: translateX(0.25rem);
-}
-
-.hero__nav-item:hover .hero__nav-dot {
-  background: #ec4899;
-}
-
-.hero__nav-item:hover .hero__nav-text {
-  color: white;
-}
-
-.hero__nav-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #6b7280;
-  transition: background 0.3s ease;
-}
-
-.hero__nav-item--active .hero__nav-dot {
-  background: white;
-}
-
-.hero__nav-text {
-  color: #d1d5db;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  transition: color 0.3s ease;
-}
-
-.hero__nav-item--active .hero__nav-text {
-  color: #d1d5db;
-}
-
-/* Scroll Indicator */
-.hero__scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.hero__scroll-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.hero__scroll-text {
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-}
-
-.hero__scroll-line {
-  width: 1px;
-  height: 3rem;
-  background: linear-gradient(to bottom, #ffffff, transparent);
-}
-
 /* Desktop Styles */
 @media (min-width: 1024px) {
   .hero__title {
     font-size: 6rem;
-  }
-
-  .hero__content {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-
-  .hero__sidebar {
-    display: flex;
   }
 
   .hero__actions {
@@ -1566,5 +1620,82 @@ const toggleFaq = (index) => {
   .why-us__item {
     padding: 1.5rem;
   }
+}
+</style>
+
+<style>
+/* Global Swiper Pagination Styles */
+.hero__swiper .swiper-pagination {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+  bottom: auto !important;
+  left: auto !important;
+}
+
+.hero__swiper .swiper-pagination-bullet {
+  background: transparent !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  cursor: pointer !important;
+  padding: 0.5rem !important;
+}
+
+.hero__swiper .swiper-pagination-bullet:hover {
+  transform: translateX(0.25rem) !important;
+}
+
+.hero__swiper .swiper-pagination-bullet:hover .hero__nav-dot {
+  background: white !important;
+}
+
+.hero__swiper .swiper-pagination-bullet:hover .hero__nav-text {
+  color: white !important;
+}
+
+.hero__swiper .swiper-pagination-bullet-active .hero__nav-dot {
+  background: #ec4899 !important;
+}
+
+.hero__swiper .swiper-pagination-bullet-active .hero__nav-text {
+  color: white !important;
+}
+
+/* Hero Nav Styles for Pagination */
+.hero__nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero__nav-dot {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: #6b7280 !important;
+  transition: background 0.3s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.hero__nav-text {
+  color: #d1d5db !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.1em !important;
+  transition: color 0.3s ease !important;
+  white-space: nowrap !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
 }
 </style> 
