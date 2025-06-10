@@ -8,28 +8,29 @@
             N-Beauty Studio
           </NuxtLink>
           
-          <div class="header__menu">
-            <NuxtLink to="/" class="header__menu-item header__menu-item--active">
+          <div class="header__menu" :class="{ 'header__menu--open': isMobileMenuOpen }">
+            <NuxtLink to="/" class="header__menu-item header__menu-item--active" @click="closeMobileMenu">
               <span class="header__menu-text">Home</span>
               <div class="header__menu-underline"></div>
             </NuxtLink>
-            <NuxtLink to="/prices" class="header__menu-item">
+            <NuxtLink to="/prices" class="header__menu-item" @click="closeMobileMenu">
               <span class="header__menu-text">Prices</span>
               <div class="header__menu-underline"></div>
             </NuxtLink>
-            <NuxtLink to="/contacts" class="header__menu-item">
+            <NuxtLink to="/contacts" class="header__menu-item" @click="closeMobileMenu">
               <span class="header__menu-text">Contacts</span>
               <div class="header__menu-underline"></div>
             </NuxtLink>
             
-            <NuxtLink to="/contacts" class="header__button">
+            <NuxtLink to="/contacts" class="header__button" @click="closeMobileMenu">
               BOOK NOW
             </NuxtLink>
           </div>
 
-          <button class="header__mobile-toggle">
+          <button class="header__mobile-toggle" @click="toggleMobileMenu">
             <svg class="header__mobile-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path v-if="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path v-if="isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
         </div>
@@ -49,6 +50,23 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+// Mobile menu state
+const isMobileMenuOpen = ref(false)
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+  console.log('Menu toggled:', isMobileMenuOpen.value)
+}
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false
+  console.log('Menu closed')
+}
+</script>
 
 <style>
 body {
@@ -71,9 +89,11 @@ body {
 
 /* Header Block */
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 30;
   box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.1), 0 4px 6px -2px rgba(236, 72, 153, 0.05);
+  background-color: white;
 }
 
 .header__nav {
@@ -110,6 +130,7 @@ body {
   display: none;
   align-items: center;
   gap: 3rem;
+  transition: all 0.3s ease;
 }
 
 .header__menu-item {
@@ -189,6 +210,63 @@ body {
   
   .header__mobile-toggle {
     display: none;
+  }
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  .header__menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid #e5e7eb;
+    border: 3px solid #ec4899;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 50;
+    min-height: 200px;
+  }
+
+  .header__menu--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__menu-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    color: #111827;
+    font-size: 1.1rem;
+  }
+
+  .header__menu-item:hover {
+    color: #ec4899;
+    background: rgba(236, 72, 153, 0.05);
+    padding-left: 1rem;
+  }
+
+  .header__menu-item:last-of-type {
+    border-bottom: none;
+  }
+
+  .header__menu-underline {
+    display: none;
+  }
+
+  .header__button {
+    margin-left: 0;
+    margin-top: 1rem;
+    text-align: center;
+    display: block;
+    padding: 1rem 1.5rem;
   }
 }
 
