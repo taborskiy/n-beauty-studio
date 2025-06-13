@@ -111,6 +111,19 @@
             </button>
           </form>
         </div>
+        <div 
+          class="map-wrapper"
+        >
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4215.692014985311!2d-114.06529220000002!3d50.911549400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717680a4e55555%3A0x4c27cac3d85a7b2f!2zMjY0IE1pZHBhcmsgV2F5IFNFICMyMDksIENhbGdhcnksIEFCIFQyWCAxSjYsINCa0LDQvdCw0LTQsA!5e1!3m2!1sru!2sua!4v1749798038188!5m2!1sru!2sua" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -136,3 +149,26 @@ const handleSubmit = () => {
   }
 }
 </script> 
+
+<style scoped>
+./* Mobile 375px and smaller */
+@media (max-width: 600px) {
+  .map-wrapper {
+    padding-bottom: 150% !important;
+    grid-column: span 1 !important;
+  }
+}
+
+.map-wrapper {
+  width: 100%;
+  /* height: 100%; */
+  padding-bottom: 50%;
+  position: relative;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  padding-bottom: 50%;
+  margin-top: 40px;
+  border-radius: 4px;
+  grid-column: span 2;
+}
+</style>
