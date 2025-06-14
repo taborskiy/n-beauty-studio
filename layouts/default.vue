@@ -5,7 +5,7 @@
       <nav class="header__nav">
         <div class="header__container">
           <NuxtLink to="/" class="header__logo">
-            N-Beauty Studio
+            <img src="/public/images/logo-horizontal.svg" alt="N-Beauty Studio Logo" class="header__logo-image">
           </NuxtLink>
           
           <div class="header__menu" :class="{ 'header__menu--open': isMobileMenuOpen }">
@@ -119,6 +119,10 @@ body {
   letter-spacing: 0.1em;
   transition: color 0.3s ease;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  img {
+    max-width: 300px;
+    height: auto;
+  }
 }
 
 .header__logo:hover {

@@ -240,7 +240,7 @@
       <div class="container">
         <div class="about-me__content">
           <div class="about-me__image">
-            <img src="/images/about.png" alt="Beauty Master" class="about-me__photo">
+            <img src="/images/about.jpg" alt="Beauty Master" class="about-me__photo">
             <div class="about-me__experience">
               <span class="about-me__years">8+</span>
               <span class="about-me__text">years of experience</span>
@@ -785,7 +785,7 @@ const toggleFaq = (index) => {
   right: 0;
   bottom: 0;
   opacity: 0.7;
-  background-image: url('/images/hero_bg.png');
+  background-image: url('/images/hero_bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
