@@ -193,6 +193,7 @@
         <div class="why-us__header">
           <h2 class="section__title">Why Us</h2>
           <div class="section__divider"></div>
+          <p class="section__whyus__subtitle">At LaserNice, we combine certified technology, a medical approach, and genuine care for your well-being.</p>
         </div>
         <div class="why-us__grid">
           <div class="why-us__item">
@@ -201,8 +202,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
               </svg>
             </div>
-            <h3>Value</h3>
-            <p>Laser treatments at traditional pricing. Fixed rate for the entire course. You pay the same amount for each visit.</p>
+            <h3>Certified Safety</h3>
+            <p>We use the Soprano Titanium, a Health Canada-certified laser that suits all skin types and offers a comfortable, virtually painless experience.</p>
           </div>
           <div class="why-us__item">
             <div class="why-us__icon">
@@ -210,8 +211,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
             </div>
-            <h3>Equipment</h3>
-            <p>Diode laser devices created in 2024. Custom order and manufacturing in the USA (Texas) for premium beauty studios.</p>
+            <h3>Professional Expertise</h3>
+            <p>Your skin is in the hands of a specialist with a medical degree. Olya isn’t just a technician — she truly understands skin physiology and upholds the highest hygiene standards.</p>
           </div>
           <div class="why-us__item">
             <div class="why-us__icon">
@@ -219,8 +220,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <h3>Quality</h3>
-            <p>Standardized processes, monthly equipment maintenance, certified specialists with medical education, individual treatment protocols.</p>
+            <h3>Fixed Pricing</h3>
+            <p>The price is fixed for the entire course. No hidden fees or surprises — ever.</p>
           </div>
           <div class="why-us__item">
             <div class="why-us__icon">
@@ -228,8 +229,17 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
               </svg>
             </div>
-            <h3>Studios</h3>
-            <p>Comfortable studios with quality disposable materials and high-level service standards in every location.</p>
+            <h3>Personalized care</h3>
+            <p>Each treatment plan is customized to your skin, hair type, and hormonal profile.</p>
+          </div>
+          <div class="why-us__item">
+            <div class="why-us__icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3>Cozy and clean space</h3>
+            <p>Our studio is designed to make you feel cared for and relaxed — not just another client.</p>
           </div>
         </div>
       </div>
@@ -250,9 +260,18 @@
             <h2 class="section__title">About Me</h2>
             <div class="section__divider"></div>
             <p class="about-me__description">
-              Hello! I'm Anna, a certified beauty master with 8 years of experience in professional cosmetology and aesthetics. My passion is enhancing the natural beauty of every woman, creating a unique look that reflects your individuality.
+              Hi! I’m Olya — your laser hair removal specialist. <br/>
+              <br/>
+              I hold a medical degree and have over 6 years of international experience in this field. <br/>
+              <br/>
+              I use only Soprano Titanium — a Health Canada-certified laser device. <br/>
+              <br/>
+              My goal is to help every woman feel confident and free. <br/>
+              To have smooth skin, forget about daily shaving, irritation, and waxing. <br/>
+              <br/>
+              💜Smooth skin is not a luxury — it’s self-care.🌸
             </p>
-            <div class="about-me__achievements">
+            <!-- <div class="about-me__achievements">
               <div class="achievement">
                 <h4>Education & Certificates</h4>
                 <ul>
@@ -269,7 +288,7 @@
                   <li>Facial Skin Care</li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -287,13 +306,13 @@
           <div class="equipment__item">
             <div class="equipment__icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
               </svg>
             </div>
-            <h3>Laser Equipment</h3>
-            <p>Latest laser systems for painless and effective procedures for rejuvenation and correction of skin imperfections</p>
+            <h3>Soprano Titanium</h3>
+            <p>This top-tier diode laser works on all skin types, offers a virtually painless experience, and is FDA & Health Canada approved.</p>
           </div>
-          <div class="equipment__item">
+          <!-- <div class="equipment__item">
             <div class="equipment__icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -319,7 +338,7 @@
             </div>
             <h3>LED Therapy</h3>
             <p>Light therapy for stimulating cell regeneration and improving overall skin condition</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -927,10 +946,6 @@ const toggleFaq = (index) => {
     gap: 4rem;
   }
 
-  .equipment__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .reviews__grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1044,6 +1059,16 @@ const toggleFaq = (index) => {
   color: #111827;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+.section__whyus__subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section__title--light {
@@ -1241,6 +1266,7 @@ const toggleFaq = (index) => {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin: 0;
 }
 
 .equipment__item {
@@ -1674,7 +1700,8 @@ const toggleFaq = (index) => {
   }
 
   .equipment__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    margin: 0 25%;
   }
 
   .process__content {
