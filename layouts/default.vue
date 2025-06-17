@@ -120,7 +120,7 @@ body {
   transition: color 0.3s ease;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
   img {
-    max-width: 300px;
+    max-width: 250px;
     height: auto;
   }
 }
