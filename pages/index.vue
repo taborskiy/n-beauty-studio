@@ -212,7 +212,7 @@
               </svg>
             </div>
             <h3>Professional Expertise</h3>
-            <p>Your skin is in the hands of a specialist with a medical degree. Olya isn’t just a technician — she truly understands skin physiology and upholds the highest hygiene standards.</p>
+            <p>Your skin is in the hands of a specialist with a medical degree. Olya isn't just a technician — she truly understands skin physiology and upholds the highest hygiene standards.</p>
           </div>
           <div class="why-us__item">
             <div class="why-us__icon">
@@ -235,7 +235,7 @@
           <div class="why-us__item">
             <div class="why-us__icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
               </svg>
             </div>
             <h3>Cozy and clean space</h3>
@@ -260,7 +260,7 @@
             <h2 class="section__title">About Me</h2>
             <div class="section__divider"></div>
             <p class="about-me__description">
-              Hi! I’m Olya — your laser hair removal specialist. <br/>
+              Hi! I'm Olya — your laser hair removal specialist. <br/>
               <br/>
               I hold a medical degree and have over 6 years of international experience in this field. <br/>
               <br/>
@@ -269,7 +269,7 @@
               My goal is to help every woman feel confident and free. <br/>
               To have smooth skin, forget about daily shaving, irritation, and waxing. <br/>
               <br/>
-              💜Smooth skin is not a luxury — it’s self-care.🌸
+              💜Smooth skin is not a luxury — it's self-care.🌸
             </p>
             <!-- <div class="about-me__achievements">
               <div class="achievement">
