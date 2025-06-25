@@ -344,69 +344,12 @@
     </section>
 
     <!-- Process Section -->
-    <section class="process section">
-      <div class="container">
-        <div class="process__header">
-          <h2 class="section__title">Process</h2>
-          <div class="section__divider"></div>
-          <p class="section__subtitle">Advantages of working with us</p>
-        </div>
-        <div class="process__content">
-          <div class="process__advantages">
-            <div class="advantages__grid">
-              <div class="advantage__item">
-                <div class="advantage__number">1</div>
-                <div class="advantage__content">
-                  <h4>Individual Approach</h4>
-                  <p>Every client receives a personalized consultation and treatment plan tailored to their unique needs and skin type.</p>
-                </div>
-              </div>
-              <div class="advantage__item">
-                <div class="advantage__number">2</div>
-                <div class="advantage__content">
-                  <h4>High Professionalism</h4>
-                  <p>8+ years of experience, certified qualifications, and continuous education in the latest beauty techniques.</p>
-                </div>
-              </div>
-              <div class="advantage__item">
-                <div class="advantage__number">3</div>
-                <div class="advantage__content">
-                  <h4>Premium Materials</h4>
-                  <p>Only top-quality, hypoallergenic pigments and materials from leading international brands are used.</p>
-                </div>
-              </div>
-              <div class="advantage__item">
-                <div class="advantage__number">4</div>
-                <div class="advantage__content">
-                  <h4>Quick Results</h4>
-                  <p>See immediate improvements with long-lasting effects that save you time on daily makeup routine.</p>
-                </div>
-              </div>
-              <div class="advantage__item">
-                <div class="advantage__number">5</div>
-                <div class="advantage__content">
-                  <h4>Quality Guarantee</h4>
-                  <p>Free touch-up included within 6 weeks and full satisfaction guarantee for all permanent makeup procedures.</p>
-                </div>
-              </div>
-              <div class="advantage__item">
-                <div class="advantage__number">6</div>
-                <div class="advantage__content">
-                  <h4>Comfortable Atmosphere</h4>
-                  <p>Relaxing, private studio environment with modern amenities to ensure your complete comfort during treatments.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- FAQ Section -->
-    <section class="faq section section--dark">
+    <section class="faq section">
       <div class="container">
         <div class="faq__header">
-          <h2 class="section__title section__title--light">Frequently Asked Questions</h2>
+          <h2 class="section__title">Frequently Asked Questions</h2>
           <div class="section__divider"></div>
         </div>
         <div class="faq__list">
@@ -508,7 +451,7 @@
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+38 (097) 123-45-67</p>
+                  <p>+1(368) 886 51 48</p>
                 </div>
               </div>
               <div class="contact__item">
@@ -705,19 +648,19 @@ const reviews = ref([
     name: 'Elena K.',
     service: 'Permanent Eyebrow Makeup',
     text: 'Incredible result! The eyebrows look absolutely natural. Anna is a true professional in her field.',
-    avatar: '/images/review1.jpg'
+    avatar: '/images/review-1.jpg'
   },
   {
     name: 'Maria V.',
     service: 'Facial Care',
     text: 'After the course of procedures, my skin became much better. I highly recommend this beauty studio!',
-    avatar: '/images/review2.jpg'
+    avatar: '/images/review-2.jpg'
   },
   {
     name: 'Svetlana P.',
     service: 'Permanent Lip Makeup',
     text: 'I always dreamed of bright lips without daily makeup. Now it\'s a reality!',
-    avatar: '/images/review3.jpg'
+    avatar: '/images/review-3.jpg'
   }
 ])
 
@@ -1389,7 +1332,7 @@ const toggleFaq = (index) => {
 }
 
 .faq__item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #e5e7eb;
   cursor: pointer;
 }
 
@@ -1409,6 +1352,7 @@ const toggleFaq = (index) => {
   font-size: 1.125rem;
   font-weight: 400;
   margin: 0;
+  color: #111827;
 }
 
 .faq__toggle {
@@ -1419,7 +1363,7 @@ const toggleFaq = (index) => {
 
 .faq__answer {
   padding-bottom: 1.5rem;
-  color: #d1d5db;
+  color: #6b7280;
   line-height: 1.6;
 }
 
