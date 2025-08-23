@@ -440,7 +440,7 @@
                 </div>
                 <div>
                   <h4>Address</h4>
-                  <p>123 Beauty Street<br>Kyiv, 01001</p>
+                  <p>Address suite 209  - 264 Midpark Way SE, Calgary , Alberta, T2X 1J6</p>
                 </div>
               </div>
               <div class="contact__item">
@@ -451,7 +451,7 @@
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+1(368) 886 51 48</p>
+                  <p>+1 368-886-5148</p>
                 </div>
               </div>
               <div class="contact__item">
@@ -462,7 +462,7 @@
                 </div>
                 <div>
                   <h4>Working Hours</h4>
-                  <p>Mon-Fri: 9:00 - 20:00<br>Sat: 10:00 - 18:00<br>Sun: by appointment</p>
+                  <p>9 a.m. - 19 p.m</p>
                 </div>
               </div>
               <div class="contact__item">
@@ -473,16 +473,16 @@
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <p>info@beautystudio.ua</p>
+                  <p>go82350@gmail.com </p>
                 </div>
               </div>
             </div>
             <div class="contacts__social">
               <h4>Social Media</h4>
               <div class="social__links">
-                <a href="#" class="social__link">Instagram</a>
-                <a href="#" class="social__link">Facebook</a>
-                <a href="#" class="social__link">Telegram</a>
+                <a href="https://www.instagram.com/laser_hair_removal_calgary/" target="_blank" class="social__link">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61563491519738#" target="_blank" class="social__link">Facebook</a>
+                <a href="https://t.me/Holub_O" target="_blank" class="social__link">Telegram</a>
               </div>
             </div>
           </div>
@@ -646,20 +646,20 @@ const pricingCategories = ref([
 const reviews = ref([
   {
     name: 'Elena K.',
-    service: 'Permanent Eyebrow Makeup',
-    text: 'Incredible result! The eyebrows look absolutely natural. Anna is a true professional in her field.',
+    // service: 'Permanent Eyebrow Makeup',
+    text: 'I had an amazing experience with the laser technician! Their expertise and professionalism were top-notch. The results from the laser treatment were fantastic, and I highly recommend their services to anyone looking for effective and safe laser treatments. Thank you for the great experience!".',
     avatar: '/images/review-1.jpg'
   },
   {
-    name: 'Maria V.',
-    service: 'Facial Care',
-    text: 'After the course of procedures, my skin became much better. I highly recommend this beauty studio!',
+    name: 'Ira Korchmaruk',
+    // service: 'Facial Care',
+    text: 'Thank you for the procedure. My skin in delicate areas is simply incredible, I already have a good result after the second procedure! I recommend Olga!',
     avatar: '/images/review-2.jpg'
   },
   {
     name: 'Svetlana P.',
-    service: 'Permanent Lip Makeup',
-    text: 'I always dreamed of bright lips without daily makeup. Now it\'s a reality!',
+    // service: 'Permanent Lip Makeup',
+    text: 'excellent laser hair removal!',
     avatar: '/images/review-3.jpg'
   }
 ])
@@ -891,6 +891,7 @@ const toggleFaq = (index) => {
 
   .reviews__grid {
     grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
   }
 }
 
@@ -1453,15 +1454,20 @@ const toggleFaq = (index) => {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  align-items: stretch;
 }
 
 .review__item {
   background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .review__content {
+  flex: 1;
   margin-bottom: 1.5rem;
 }
 
@@ -1479,6 +1485,7 @@ const toggleFaq = (index) => {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .review__avatar {
@@ -1662,6 +1669,7 @@ const toggleFaq = (index) => {
 
   .reviews__grid {
     grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
   }
 
   .contacts__content {

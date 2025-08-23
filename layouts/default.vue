@@ -44,7 +44,9 @@
     <footer class="footer">
       <div class="footer__container">
         <div class="footer__content">
-          <p class="footer__copyright">&copy; {{ new Date().getFullYear() }} N-Beauty Studio. All rights reserved.</p>
+          <p class="footer__copyright">
+            &copy; {{ new Date().getFullYear() }} Laser Nice Beauty. Website developed by Nexora Web. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
