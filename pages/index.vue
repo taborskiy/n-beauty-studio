@@ -294,6 +294,41 @@
       </div>
     </section>
 
+    <!-- Before & After Section -->
+    <section class="before-after section">
+      <div class="container">
+        <div class="before-after__header">
+          <h2 class="section__title">Before & After Results</h2>
+          <div class="section__divider"></div>
+          <p class="section__subtitle">See the incredible transformations achieved with our professional laser hair removal treatments</p>
+        </div>
+        <div class="before-after__gallery">
+          <div class="before-after__item" v-for="(result, index) in beforeAfterResults" :key="index">
+            <div class="before-after__images">
+              <div class="before-after__image-container">
+                <div class="before-after__label before-after__label--before">Before</div>
+                <img :src="result.before" :alt="`Before treatment - ${result.area}`" class="before-after__image">
+              </div>
+              <div class="before-after__image-container">
+                <div class="before-after__label before-after__label--after">After</div>
+                <img :src="result.after" :alt="`After treatment - ${result.area}`" class="before-after__image">
+              </div>
+            </div>
+            <div class="before-after__info">
+              <h3>{{ result.area }}</h3>
+              <p>{{ result.sessions }} sessions completed</p>
+              <div class="before-after__details">
+                <span class="before-after__timeline">{{ result.timeline }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="before-after__note">
+          <p><strong>Please note:</strong> Results may vary depending on individual skin type, hair color, and hormonal factors. These photos show real client results after completing the recommended treatment course.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Equipment Section -->
     <section class="equipment section section--dark">
       <div class="container">
@@ -681,6 +716,38 @@ const reviews = ref([
     // service: 'Permanent Lip Makeup',
     text: 'excellent laser hair removal!',
     avatar: '/images/review-3.jpg'
+  }
+])
+
+// Before & After Results data
+const beforeAfterResults = ref([
+  {
+    area: 'Legs (Full)',
+    before: '/assets/referens/img/lazernaya-epilyaciya-nogi-polnostyu-glubokoe-bikini-podmyshki-kopiia.webp',
+    after: '/assets/referens/img/nogi-povnistyu-gliboke-bikini-malenka-zona-na-vibir.webp',
+    sessions: '6-8',
+    timeline: '8 months'
+  },
+  {
+    area: 'Bikini Area',
+    before: '/assets/referens/img/gliboke-bikini-pahvi-goleni-malenka-zona-na-vibir.webp',
+    after: '/assets/referens/img/gliboke-bikini-pahvi-malenka-zona-na-vibir.webp',
+    sessions: '5-7',
+    timeline: '6 months'
+  },
+  {
+    area: 'Male Chest & Arms',
+    before: '/assets/referens/img/cholovicha-lazerna-epilyaciya-tors-i-ruki-povnistyu.webp',
+    after: '/assets/referens/img/cholovicha-lazerna-epilyaciya-grudna-klitina-i-zhivit2.webp',
+    sessions: '6-10',
+    timeline: '10 months'
+  },
+  {
+    area: 'Full Body (Female)',
+    before: '/assets/referens/img/lazerna-epilyaciya-vsogo-tila.webp',
+    after: '/assets/referens/img/nogi-povnistyu-gliboke-bikini-pahvi-ruki-povnistyu-malenka-zona-na-vibir2.webp',
+    sessions: '8-12',
+    timeline: '12 months'
   }
 ])
 
@@ -1218,6 +1285,158 @@ const toggleFaq = (index) => {
   color: #6b7280;
   line-height: 1.6;
   font-size: 0.95rem;
+}
+
+/* Before & After Section */
+.before-after__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.before-after__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.before-after__item {
+  background: #f9fafb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.before-after__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #ec4899;
+}
+
+.before-after__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.before-after__image-container {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.before-after__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.before-after__image:hover {
+  transform: scale(1.05);
+}
+
+.before-after__label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+.before-after__label--before {
+  background: rgba(239, 68, 68, 0.9);
+}
+
+.before-after__label--after {
+  background: rgba(34, 197, 94, 0.9);
+}
+
+.before-after__info {
+  text-align: center;
+}
+
+.before-after__info h3 {
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.before-after__info p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.before-after__details {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.before-after__timeline {
+  background: #ec4899;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.before-after__note {
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.before-after__note p {
+  color: #0f172a;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.before-after__note strong {
+  color: #ec4899;
+}
+
+@media (max-width: 768px) {
+  .before-after__gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .before-after__images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .before-after__image {
+    height: 250px;
+  }
+  
+  .before-after__item {
+    padding: 1rem;
+  }
+  
+  .before-after__note {
+    padding: 1rem;
+  }
 }
 
 /* Equipment Section */
