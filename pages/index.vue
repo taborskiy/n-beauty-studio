@@ -349,7 +349,7 @@
     <section class="faq section">
       <div class="container">
         <div class="faq__header">
-          <h2 class="section__title">Frequently Asked Questions</h2>
+          <h2 class="section__title">Top 10 Questions About Laser Hair Removal</h2>
           <div class="section__divider"></div>
         </div>
         <div class="faq__list">
@@ -567,24 +567,44 @@ const onSlideChange = (swiper) => {
 const activeFaq = ref(null)
 const faqs = ref([
   {
-    question: 'Is permanent makeup procedure painful?',
-    answer: 'During the procedure, quality numbing agents are used, so discomfort is minimal. Most clients feel only light tingling.'
+    question: 'Why isn\'t one session enough?',
+    answer: 'Laser targets only hairs in the active growth phase. Since hair grows in cycles, several sessions (usually 5–10) are needed to treat all phases effectively.'
+  },
+  {
+    question: 'Does laser hair removal hurt?',
+    answer: 'Everyone\'s sensitivity is different. Most clients describe the feeling as a light tingling or gentle warmth. Modern devices include cooling systems, making the treatment as comfortable as possible.'
+  },
+  {
+    question: 'Is laser hair removal permanent?',
+    answer: 'Yes, the laser destroys the hair follicle. However, due to hormonal changes or stress, new hairs may appear over time. These can be easily managed with maintenance sessions.'
   },
   {
     question: 'How long does the result last?',
-    answer: 'Permanent makeup lasts from 1 to 3 years depending on skin type, lifestyle and care. Touch-up is recommended 4-6 weeks after the first procedure.'
+    answer: 'After completing the full course, results last for years. To maintain silky-smooth skin, only 1–2 touch-up sessions per year are usually needed.'
   },
   {
-    question: 'How to prepare for the procedure?',
-    answer: 'A week before the procedure, avoid sun exposure, do not consume alcohol 24 hours before. Detailed recommendations are provided during consultation.'
+    question: 'How long should the hair be before treatment?',
+    answer: 'Before your appointment, simply shave the area 12–24 hours in advance. Avoid waxing, sugaring, or tweezing, as the laser needs the root of the hair to work effectively.'
   },
   {
-    question: 'Can procedures be done during pregnancy?',
-    answer: 'Permanent makeup procedures are not recommended during pregnancy and breastfeeding for safety reasons.'
+    question: 'Can I tan during the course of laser hair removal?',
+    answer: 'It\'s best to avoid tanning and solariums, as they increase the risk of burns or pigmentation. We recommend staying out of direct sun for at least 3 days before and after your session.'
   },
   {
-    question: 'How long does the procedure take?',
-    answer: 'Depending on the type of procedure: eyebrows - 2-3 hours, lips - 2-2.5 hours, eyeliner - 1.5-2 hours. Includes consultation and sketch.'
+    question: 'Can I remove hair between sessions?',
+    answer: 'Yes, but only with a razor. Waxing, sugaring, or tweezing should be avoided, as they remove the follicle that the laser targets.'
+  },
+  {
+    question: 'Who should avoid laser hair removal?',
+    answer: 'Contraindications include pregnancy, cancer, uncontrolled diabetes, severe skin conditions, fresh tan, and taking photosensitizing medications.'
+  },
+  {
+    question: 'Is it safe during my period?',
+    answer: 'Yes, the procedure is allowed. Keep in mind that the bikini area may feel more sensitive during this time, so it\'s often more comfortable to book after your cycle.'
+  },
+  {
+    question: 'Are there any side effects?',
+    answer: 'Mild redness or swelling is a normal reaction that disappears within a few hours. Complications are extremely rare if you follow your specialist\'s aftercare advice.'
   }
 ])
 
