@@ -410,15 +410,38 @@
           <p class="section__subtitle">Professional services at affordable prices</p>
         </div>
         <div class="pricing__categories">
-          <div class="pricing__category" v-for="(category, index) in pricingCategories" :key="index">
-            <h3 class="pricing__category-title">{{ category.name }}</h3>
+          <div class="pricing__category">
+            <h3 class="pricing__category-title">Women</h3>
             <div class="pricing__services">
-              <div class="pricing__service" v-for="(service, serviceIndex) in category.services" :key="serviceIndex">
-                <div class="pricing__service-info">
-                  <h4>{{ service.name }}</h4>
-                  <p>{{ service.description }}</p>
+              <div class="grid md:grid-cols-1 gap-4" v-for="(block, blcokIndex) in laserWomenServices" :key="blcokIndex">
+                <h2 class="text-lg font-medium text-pink-700">{{ block.blockName }}</h2>
+                <div v-for="(service, serviceIndex) in block.items" :key="serviceIndex" class="pricing__service ">
+
+                  <div class="pricing__service-info" >
+                    <h4>{{ service.name }}</h4>
+                    <p>{{ service.description }}</p>
+                  </div>
+                  <div class="pricing__service-price">{{ service.price }}</div>
                 </div>
-                <div class="pricing__service-price">{{ service.price }}</div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing__category">
+            <h3 class="pricing__category-title">Man</h3>
+            <div class="pricing__services">
+              <div class="grid md:grid-cols-1 gap-4" v-for="(block, blcokIndex) in laserMenServices" :key="blcokIndex">
+                <h2 class="text-lg font-medium text-pink-700">{{ block.blockName }}</h2>
+                <div v-for="(service, serviceIndex) in block.items" :key="serviceIndex" class="pricing__service ">
+
+                  <div class="pricing__service-info" >
+                    <h4>{{ service.name }}</h4>
+                    <p>{{ service.description }}</p>
+                  </div>
+                  <div class="pricing__service-price">{{ service.price }}</div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -566,6 +589,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
+import {laserMenServices, laserWomenServices} from '../data/price.js'
+
 // Swiper modules
 const modules = [Navigation, Pagination]
 
@@ -640,60 +665,6 @@ const faqs = ref([
   {
     question: 'Are there any side effects?',
     answer: 'Mild redness or swelling is a normal reaction that disappears within a few hours. Complications are extremely rare if you follow your specialist\'s aftercare advice.'
-  }
-])
-
-// Pricing data
-const pricingCategories = ref([
-  {
-    name: 'Permanent Makeup',
-    services: [
-      {
-        name: 'Eyebrows (Powder Technique)',
-        description: 'Natural powder effect',
-        price: '$150'
-      },
-      {
-        name: 'Eyebrows (Hair Stroke Technique)',
-        description: 'Natural hair imitation',
-        price: '$170'
-      },
-      {
-        name: 'Lips (Outline + Shading)',
-        description: 'Full lip filling',
-        price: '$190'
-      },
-      {
-        name: 'Eyeliner',
-        description: 'Classic or extended eyeliner',
-        price: '$130'
-      }
-    ]
-  },
-  {
-    name: 'Cosmetology',
-    services: [
-      {
-        name: 'Facial Cleansing',
-        description: 'Mechanical + ultrasonic',
-        price: '$50'
-      },
-      {
-        name: 'Chemical Peel',
-        description: 'Depending on acid type',
-        price: 'from $35'
-      },
-      {
-        name: 'Lifting Massage',
-        description: 'Anti-aging program',
-        price: '$40'
-      },
-      {
-        name: 'Mesotherapy',
-        description: 'Injectable rejuvenation',
-        price: 'from $65'
-      }
-    ]
   }
 ])
 
