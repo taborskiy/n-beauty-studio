@@ -723,29 +723,43 @@ const reviews = ref([
 const beforeAfterResults = ref([
   {
     area: 'Legs (Full)',
-    before: '/assets/referens/img/lazernaya-epilyaciya-nogi-polnostyu-glubokoe-bikini-podmyshki-kopiia.webp',
-    after: '/assets/referens/img/nogi-povnistyu-gliboke-bikini-malenka-zona-na-vibir.webp',
+    before: '/images/before_1.jpg',
+    after: '/images/after_1.jpg',
     sessions: '6-8',
     timeline: '8 months'
   },
   {
     area: 'Bikini Area',
-    before: '/assets/referens/img/gliboke-bikini-pahvi-goleni-malenka-zona-na-vibir.webp',
-    after: '/assets/referens/img/gliboke-bikini-pahvi-malenka-zona-na-vibir.webp',
+    before: '/images/before_2.jpg',
+    after: '/images/after_2.jpg',
     sessions: '5-7',
     timeline: '6 months'
   },
   {
     area: 'Male Chest & Arms',
-    before: '/assets/referens/img/cholovicha-lazerna-epilyaciya-tors-i-ruki-povnistyu.webp',
-    after: '/assets/referens/img/cholovicha-lazerna-epilyaciya-grudna-klitina-i-zhivit2.webp',
+    before: '/images/before_3.jpg',
+    after: '/images/after_3.jpg',
     sessions: '6-10',
     timeline: '10 months'
   },
   {
     area: 'Full Body (Female)',
-    before: '/assets/referens/img/lazerna-epilyaciya-vsogo-tila.webp',
-    after: '/assets/referens/img/nogi-povnistyu-gliboke-bikini-pahvi-ruki-povnistyu-malenka-zona-na-vibir2.webp',
+    before: '/images/before_4.jpg',
+    after: '/images/after_4.jpg',
+    sessions: '8-12',
+    timeline: '12 months'
+  },
+  {
+    area: 'Full Body (Female)',
+    before: '/images/before_5.jpg',
+    after: '/images/after_5.jpg',
+    sessions: '8-12',
+    timeline: '12 months'
+  },
+  {
+    area: 'Full Body (Female)',
+    before: '/images/before_6.jpg',
+    after: '/images/after_6.jpg',
     sessions: '8-12',
     timeline: '12 months'
   }
