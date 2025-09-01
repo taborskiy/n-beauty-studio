@@ -15,7 +15,7 @@
                 <span class="text-xl">📍</span>
                 <div>
                   <h3 class="font-medium">Address</h3>
-                  <p class="text-gray-600">123 Beauty Street<br>New York, NY 10001</p>
+                  <p class="text-gray-600">Address suite 209  - 264 <br>Midpark Way SE, Calgary , Alberta, T2X 1J6</p>
                 </div>
               </div>
               

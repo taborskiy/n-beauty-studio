@@ -3,48 +3,48 @@
     <div class="container mx-auto px-4">
       <h1 class="text-4xl font-light text-center mb-12">Our Prices</h1>
 
+      <div class="max-w-4xl mx-auto mb-12">
+        <h2 class="text-2xl font-light mb-6 pb-2 border-b border-gray-200 text-gray-800">
+          Laser Hair Removal - Women
+        </h2>
+
+        <div v-for="(block, blockIndex) in laserWomenServices" :key="block.blockName" 
+            :class="blockIndex < laserWomenServices.length - 1 ? 'mb-6' : ''">
+          
+          <h3 class="text-lg font-medium mb-4 text-pink-700">{{ block.blockName }}</h3>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div v-for="(service, index) in block.items" 
+                :key="`${block.blockName}-${index}`" 
+                class="flex justify-between items-center py-2 hover:bg-gray-50 rounded-lg px-2 transition-colors">
+              <div>
+                <h4 class="font-medium text-gray-800">{{ service.name }}</h4>
+                <p class="text-gray-600 text-sm">{{ service.description }}</p>
+              </div>
+              <span class="text-lg font-semibold text-pink-600">{{ service.price }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="max-w-4xl mx-auto">
-        <!-- Hair Services -->
-        <div class="mb-12">
-          <h2 class="text-2xl font-light mb-6 pb-2 border-b">Hair Services</h2>
-          <div class="space-y-4">
-            <div v-for="(service, index) in hairServices" :key="index" 
-                 class="flex justify-between items-center py-2">
-              <div>
-                <h3 class="text-lg">{{ service.name }}</h3>
-                <p class="text-gray-600 text-sm">{{ service.description }}</p>
-              </div>
-              <span class="text-lg font-medium">{{ service.price }}</span>
-            </div>
-          </div>
-        </div>
+        <h2 class="text-2xl font-light mb-6 pb-2 border-b border-gray-200 text-gray-800">
+          Laser Hair Removal - Man
+        </h2>
 
-        <!-- Nail Services -->
-        <div class="mb-12">
-          <h2 class="text-2xl font-light mb-6 pb-2 border-b">Nail Services</h2>
-          <div class="space-y-4">
-            <div v-for="(service, index) in nailServices" :key="index" 
-                 class="flex justify-between items-center py-2">
+        <div v-for="(block, blockIndex) in laserMenServices" :key="block.blockName" 
+            :class="blockIndex < laserMenServices.length - 1 ? 'mb-6' : ''">
+          
+          <h3 class="text-lg font-medium mb-4 text-pink-700">{{ block.blockName }}</h3>
+          
+          <div class="grid md:grid-cols-1 gap-4">
+            <div v-for="(service, index) in block.items" 
+                :key="`${block.blockName}-${index}`" 
+                class="flex justify-between items-center py-2 hover:bg-gray-50 rounded-lg px-2 transition-colors">
               <div>
-                <h3 class="text-lg">{{ service.name }}</h3>
+                <h4 class="font-medium text-gray-800">{{ service.name }}</h4>
                 <p class="text-gray-600 text-sm">{{ service.description }}</p>
               </div>
-              <span class="text-lg font-medium">{{ service.price }}</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Facial Services -->
-        <div class="mb-12">
-          <h2 class="text-2xl font-light mb-6 pb-2 border-b">Facial Services</h2>
-          <div class="space-y-4">
-            <div v-for="(service, index) in facialServices" :key="index" 
-                 class="flex justify-between items-center py-2">
-              <div>
-                <h3 class="text-lg">{{ service.name }}</h3>
-                <p class="text-gray-600 text-sm">{{ service.description }}</p>
-              </div>
-              <span class="text-lg font-medium">{{ service.price }}</span>
+              <span class="text-lg font-semibold text-pink-600">{{ service.price }}</span>
             </div>
           </div>
         </div>
@@ -54,57 +54,5 @@
 </template>
 
 <script setup>
-const hairServices = [
-  {
-    name: 'Haircut',
-    description: 'Includes consultation and styling',
-    price: 'from $45'
-  },
-  {
-    name: 'Hair Coloring',
-    description: 'Full color application',
-    price: 'from $85'
-  },
-  {
-    name: 'Hair Styling',
-    description: 'Blow dry and styling',
-    price: 'from $35'
-  }
-]
-
-const nailServices = [
-  {
-    name: 'Manicure',
-    description: 'Basic nail care and polish',
-    price: 'from $30'
-  },
-  {
-    name: 'Pedicure',
-    description: 'Foot care and polish',
-    price: 'from $40'
-  },
-  {
-    name: 'Nail Art',
-    description: 'Custom design and decoration',
-    price: 'from $15'
-  }
-]
-
-const facialServices = [
-  {
-    name: 'Basic Facial',
-    description: 'Cleansing and moisturizing treatment',
-    price: 'from $60'
-  },
-  {
-    name: 'Deep Cleansing',
-    description: 'Intensive skin treatment',
-    price: 'from $80'
-  },
-  {
-    name: 'Anti-Aging Treatment',
-    description: 'Premium facial with specialized products',
-    price: 'from $100'
-  }
-]
+import {laserMenServices, laserWomenServices} from '../data/price.js'
 </script> 
