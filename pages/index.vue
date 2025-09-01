@@ -294,6 +294,41 @@
       </div>
     </section>
 
+    <!-- Before & After Section -->
+    <section class="before-after section">
+      <div class="container">
+        <div class="before-after__header">
+          <h2 class="section__title">Before & After Results</h2>
+          <div class="section__divider"></div>
+          <p class="section__subtitle">See the incredible transformations achieved with our professional laser hair removal treatments</p>
+        </div>
+        <div class="before-after__gallery">
+          <div class="before-after__item" v-for="(result, index) in beforeAfterResults" :key="index">
+            <div class="before-after__images">
+              <div class="before-after__image-container">
+                <div class="before-after__label before-after__label--before">Before</div>
+                <img :src="result.before" :alt="`Before treatment - ${result.area}`" class="before-after__image">
+              </div>
+              <div class="before-after__image-container">
+                <div class="before-after__label before-after__label--after">After</div>
+                <img :src="result.after" :alt="`After treatment - ${result.area}`" class="before-after__image">
+              </div>
+            </div>
+            <div class="before-after__info">
+              <h3>{{ result.area }}</h3>
+              <p>{{ result.sessions }} sessions completed</p>
+              <div class="before-after__details">
+                <span class="before-after__timeline">{{ result.timeline }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="before-after__note">
+          <p><strong>Please note:</strong> Results may vary depending on individual skin type, hair color, and hormonal factors. These photos show real client results after completing the recommended treatment course.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Equipment Section -->
     <section class="equipment section section--dark">
       <div class="container">
@@ -349,7 +384,7 @@
     <section class="faq section">
       <div class="container">
         <div class="faq__header">
-          <h2 class="section__title">Frequently Asked Questions</h2>
+          <h2 class="section__title">Top 10 Questions About Laser Hair Removal</h2>
           <div class="section__divider"></div>
         </div>
         <div class="faq__list">
@@ -440,7 +475,7 @@
                 </div>
                 <div>
                   <h4>Address</h4>
-                  <p>123 Beauty Street<br>Kyiv, 01001</p>
+                  <p>Address suite 209  - 264 Midpark Way SE, Calgary , Alberta, T2X 1J6</p>
                 </div>
               </div>
               <div class="contact__item">
@@ -451,7 +486,7 @@
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+1(368) 886 51 48</p>
+                  <p>+1 368-886-5148</p>
                 </div>
               </div>
               <div class="contact__item">
@@ -462,7 +497,7 @@
                 </div>
                 <div>
                   <h4>Working Hours</h4>
-                  <p>Mon-Fri: 9:00 - 20:00<br>Sat: 10:00 - 18:00<br>Sun: by appointment</p>
+                  <p>9 a.m. - 19 p.m</p>
                 </div>
               </div>
               <div class="contact__item">
@@ -473,16 +508,16 @@
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <p>info@beautystudio.ua</p>
+                  <p>go82350@gmail.com </p>
                 </div>
               </div>
             </div>
             <div class="contacts__social">
               <h4>Social Media</h4>
               <div class="social__links">
-                <a href="#" class="social__link">Instagram</a>
-                <a href="#" class="social__link">Facebook</a>
-                <a href="#" class="social__link">Telegram</a>
+                <a href="https://www.instagram.com/laser_hair_removal_calgary/" target="_blank" class="social__link">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61563491519738#" target="_blank" class="social__link">Facebook</a>
+                <a href="https://t.me/Holub_O" target="_blank" class="social__link">Telegram</a>
               </div>
             </div>
           </div>
@@ -567,24 +602,44 @@ const onSlideChange = (swiper) => {
 const activeFaq = ref(null)
 const faqs = ref([
   {
-    question: 'Is permanent makeup procedure painful?',
-    answer: 'During the procedure, quality numbing agents are used, so discomfort is minimal. Most clients feel only light tingling.'
+    question: 'Why isn\'t one session enough?',
+    answer: 'Laser targets only hairs in the active growth phase. Since hair grows in cycles, several sessions (usually 5–10) are needed to treat all phases effectively.'
+  },
+  {
+    question: 'Does laser hair removal hurt?',
+    answer: 'Everyone\'s sensitivity is different. Most clients describe the feeling as a light tingling or gentle warmth. Modern devices include cooling systems, making the treatment as comfortable as possible.'
+  },
+  {
+    question: 'Is laser hair removal permanent?',
+    answer: 'Yes, the laser destroys the hair follicle. However, due to hormonal changes or stress, new hairs may appear over time. These can be easily managed with maintenance sessions.'
   },
   {
     question: 'How long does the result last?',
-    answer: 'Permanent makeup lasts from 1 to 3 years depending on skin type, lifestyle and care. Touch-up is recommended 4-6 weeks after the first procedure.'
+    answer: 'After completing the full course, results last for years. To maintain silky-smooth skin, only 1–2 touch-up sessions per year are usually needed.'
   },
   {
-    question: 'How to prepare for the procedure?',
-    answer: 'A week before the procedure, avoid sun exposure, do not consume alcohol 24 hours before. Detailed recommendations are provided during consultation.'
+    question: 'How long should the hair be before treatment?',
+    answer: 'Before your appointment, simply shave the area 12–24 hours in advance. Avoid waxing, sugaring, or tweezing, as the laser needs the root of the hair to work effectively.'
   },
   {
-    question: 'Can procedures be done during pregnancy?',
-    answer: 'Permanent makeup procedures are not recommended during pregnancy and breastfeeding for safety reasons.'
+    question: 'Can I tan during the course of laser hair removal?',
+    answer: 'It\'s best to avoid tanning and solariums, as they increase the risk of burns or pigmentation. We recommend staying out of direct sun for at least 3 days before and after your session.'
   },
   {
-    question: 'How long does the procedure take?',
-    answer: 'Depending on the type of procedure: eyebrows - 2-3 hours, lips - 2-2.5 hours, eyeliner - 1.5-2 hours. Includes consultation and sketch.'
+    question: 'Can I remove hair between sessions?',
+    answer: 'Yes, but only with a razor. Waxing, sugaring, or tweezing should be avoided, as they remove the follicle that the laser targets.'
+  },
+  {
+    question: 'Who should avoid laser hair removal?',
+    answer: 'Contraindications include pregnancy, cancer, uncontrolled diabetes, severe skin conditions, fresh tan, and taking photosensitizing medications.'
+  },
+  {
+    question: 'Is it safe during my period?',
+    answer: 'Yes, the procedure is allowed. Keep in mind that the bikini area may feel more sensitive during this time, so it\'s often more comfortable to book after your cycle.'
+  },
+  {
+    question: 'Are there any side effects?',
+    answer: 'Mild redness or swelling is a normal reaction that disappears within a few hours. Complications are extremely rare if you follow your specialist\'s aftercare advice.'
   }
 ])
 
@@ -646,21 +701,67 @@ const pricingCategories = ref([
 const reviews = ref([
   {
     name: 'Elena K.',
-    service: 'Permanent Eyebrow Makeup',
-    text: 'Incredible result! The eyebrows look absolutely natural. Anna is a true professional in her field.',
+    // service: 'Permanent Eyebrow Makeup',
+    text: 'I had an amazing experience with the laser technician! Their expertise and professionalism were top-notch. The results from the laser treatment were fantastic, and I highly recommend their services to anyone looking for effective and safe laser treatments. Thank you for the great experience!".',
     avatar: '/images/review-1.jpg'
   },
   {
-    name: 'Maria V.',
-    service: 'Facial Care',
-    text: 'After the course of procedures, my skin became much better. I highly recommend this beauty studio!',
+    name: 'Ira Korchmaruk',
+    // service: 'Facial Care',
+    text: 'Thank you for the procedure. My skin in delicate areas is simply incredible, I already have a good result after the second procedure! I recommend Olga!',
     avatar: '/images/review-2.jpg'
   },
   {
     name: 'Svetlana P.',
-    service: 'Permanent Lip Makeup',
-    text: 'I always dreamed of bright lips without daily makeup. Now it\'s a reality!',
+    // service: 'Permanent Lip Makeup',
+    text: 'excellent laser hair removal!',
     avatar: '/images/review-3.jpg'
+  }
+])
+
+// Before & After Results data
+const beforeAfterResults = ref([
+  {
+    area: 'Legs (Full)',
+    before: '/images/before_1.jpg',
+    after: '/images/after_1.jpg',
+    sessions: '6-8',
+    timeline: '8 months'
+  },
+  {
+    area: 'Bikini Area',
+    before: '/images/before_2.jpg',
+    after: '/images/after_2.jpg',
+    sessions: '5-7',
+    timeline: '6 months'
+  },
+  {
+    area: 'Male Chest & Arms',
+    before: '/images/before_3.jpg',
+    after: '/images/after_3.jpg',
+    sessions: '6-10',
+    timeline: '10 months'
+  },
+  {
+    area: 'Full Body (Female)',
+    before: '/images/before_4.jpg',
+    after: '/images/after_4.jpg',
+    sessions: '8-12',
+    timeline: '12 months'
+  },
+  {
+    area: 'Full Body (Female)',
+    before: '/images/before_5.jpg',
+    after: '/images/after_5.jpg',
+    sessions: '8-12',
+    timeline: '12 months'
+  },
+  {
+    area: 'Full Body (Female)',
+    before: '/images/before_6.jpg',
+    after: '/images/after_6.jpg',
+    sessions: '8-12',
+    timeline: '12 months'
   }
 ])
 
@@ -891,6 +992,7 @@ const toggleFaq = (index) => {
 
   .reviews__grid {
     grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
   }
 }
 
@@ -1199,6 +1301,158 @@ const toggleFaq = (index) => {
   font-size: 0.95rem;
 }
 
+/* Before & After Section */
+.before-after__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.before-after__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.before-after__item {
+  background: #f9fafb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.before-after__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #ec4899;
+}
+
+.before-after__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.before-after__image-container {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.before-after__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.before-after__image:hover {
+  transform: scale(1.05);
+}
+
+.before-after__label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 10;
+}
+
+.before-after__label--before {
+  background: rgba(239, 68, 68, 0.9);
+}
+
+.before-after__label--after {
+  background: rgba(34, 197, 94, 0.9);
+}
+
+.before-after__info {
+  text-align: center;
+}
+
+.before-after__info h3 {
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.before-after__info p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.before-after__details {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.before-after__timeline {
+  background: #ec4899;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.before-after__note {
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.before-after__note p {
+  color: #0f172a;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.before-after__note strong {
+  color: #ec4899;
+}
+
+@media (max-width: 768px) {
+  .before-after__gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .before-after__images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .before-after__image {
+    height: 250px;
+  }
+  
+  .before-after__item {
+    padding: 1rem;
+  }
+  
+  .before-after__note {
+    padding: 1rem;
+  }
+}
+
 /* Equipment Section */
 .equipment__header {
   text-align: center;
@@ -1453,15 +1707,20 @@ const toggleFaq = (index) => {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  align-items: stretch;
 }
 
 .review__item {
   background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .review__content {
+  flex: 1;
   margin-bottom: 1.5rem;
 }
 
@@ -1479,6 +1738,7 @@ const toggleFaq = (index) => {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .review__avatar {
@@ -1662,6 +1922,7 @@ const toggleFaq = (index) => {
 
   .reviews__grid {
     grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
   }
 
   .contacts__content {
