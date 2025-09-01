@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero__texture"></div>
-      <div class="hero__background"></div>
+      <div class="hero__background" :style="{ backgroundImage: `url(${currentBackgroundImage})` }"></div>
       
       <div class="hero__container">
         <!-- Swiper -->
@@ -39,22 +39,28 @@
                   </div>
 
                   <h1 class="hero__title">
-                    <span class="hero__title-main">Permanent Makeup</span>
+                    <span class="hero__title-main">SET 1 "MY LOVELY"</span>
                   </h1>
                   
                   <div class="hero__divider"></div>
+
+                  <ul class="hero__list">
+                    <li>💜 UNDERARMS</li>
+                    <li>💜 BRAZILIAN</li>
+                    <li>💜 FULL LEGS</li>
+                  </ul>
                   
                   <p class="hero__description">
-                    permanent makeup, tattoo, eyelash extension, eyebrow, lip. New action! for your beauty!
+                    (REGULAR PRICE $270) - YOU SAVE $40 <br> PRICE LOCKED FOR YOUR ENTIRE COURSE OF PROCEDURES
                     <span class="hero__pricing">
-                       <span class="hero__price-new">120₴</span> <span class="hero__price-old">180₴</span>
+                       <span class="hero__price-new">230 $</span> <span class="hero__price-old">270 $</span>
                     </span>
                   </p>
                 </div>
 
                 <div class="hero__actions">
                   <NuxtLink to="/contacts" class="hero__button hero__button--primary">
-                    <span class="hero__button-text">BOOK CONSULTATION</span>
+                    <span class="hero__button-text">BOOK NOW</span>
                     <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
@@ -79,15 +85,21 @@
                   </div>
 
                   <h1 class="hero__title">
-                    <span class="hero__title-main">Eyelash Extension</span>
+                    <span class="hero__title-main">SET 2 "MY LOVELY"</span>
                   </h1>
                   
                   <div class="hero__divider"></div>
+
+                  <ul class="hero__list">
+                    <li>💜 UNDERARMS</li>
+                    <li>💜 BRAZILIAN</li>
+                    <li>💜 HALF LEGS</li>
+                  </ul>
                   
                   <p class="hero__description">
-                    Professional eyelash extension services. Volume, classic, hybrid techniques available.
+                    (REGULAR PRICE 210$) - YOU SAVE $30 <br> PRICE LOCKED FOR YOUR ENTIRE COURSE OF PROCEDURES.
                     <span class="hero__pricing">
-                       <span class="hero__price-new">800₴</span> <span class="hero__price-old">1200₴</span>
+                       <span class="hero__price-new">180 $</span> <span class="hero__price-old">210 $</span>
                     </span>
                   </p>
                 </div>
@@ -111,7 +123,7 @@
                 <div class="hero__text-wrapper">
                   <div class="hero__tags">
                     <div class="hero__tag hero__tag--sale">
-                      <div class="hero__tag-badge">PROMO</div>
+                      <div class="hero__tag-badge">ALL</div>
                     </div>
                     <div class="hero__tag hero__tag--price">
                       <div class="hero__tag-badge">BEST</div>
@@ -119,62 +131,22 @@
                   </div>
 
                   <h1 class="hero__title">
-                    <span class="hero__title-main">Eyebrow Styling</span>
+                    <span class="hero__title-main">SET 3 "ALL INCLUDES"</span>
                   </h1>
                   
                   <div class="hero__divider"></div>
                   
                   <p class="hero__description">
-                    Professional eyebrow shaping, tinting, and styling services for perfect brows.
+                    ALL FOR JUST $350.
                     <span class="hero__pricing">
-                       <span class="hero__price-new">300₴</span> <span class="hero__price-old">450₴</span>
+                       <span class="hero__price-new">350 $</span>
                     </span>
                   </p>
                 </div>
 
                 <div class="hero__actions">
                   <NuxtLink to="/contacts" class="hero__button hero__button--primary">
-                    <span class="hero__button-text">GET PERFECT BROWS</span>
-                    <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </NuxtLink>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <!-- Slide 4 - Lip Services -->
-          <SwiperSlide>
-            <div class="hero__content">
-              <div class="hero__text-section">
-                <div class="hero__text-wrapper">
-                  <div class="hero__tags">
-                    <div class="hero__tag hero__tag--sale">
-                      <div class="hero__tag-badge">LUXURY</div>
-                    </div>
-                    <div class="hero__tag hero__tag--price">
-                      <div class="hero__tag-badge">TOP</div>
-                    </div>
-                  </div>
-
-                  <h1 class="hero__title">
-                    <span class="hero__title-main">Lip Enhancement</span>
-                  </h1>
-                  
-                  <div class="hero__divider"></div>
-                  
-                  <p class="hero__description">
-                    Professional lip enhancement, permanent lip makeup, and lip care treatments.
-                    <span class="hero__pricing">
-                       <span class="hero__price-new">950₴</span> <span class="hero__price-old">1400₴</span>
-                    </span>
-                  </p>
-                </div>
-
-                <div class="hero__actions">
-                  <NuxtLink to="/contacts" class="hero__button hero__button--primary">
-                    <span class="hero__button-text">BEAUTIFUL LIPS</span>
+                    <span class="hero__button-text">BOOK NOW</span>
                     <svg class="hero__button-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
@@ -252,7 +224,7 @@
           <div class="about-me__image">
             <img src="/images/about.jpg" alt="Beauty Master" class="about-me__photo">
             <div class="about-me__experience">
-              <span class="about-me__years">8+</span>
+              <span class="about-me__years">6+</span>
               <span class="about-me__text">years of experience</span>
             </div>
           </div>
@@ -539,8 +511,8 @@
               <h4>Social Media</h4>
               <div class="social__links">
                 <a href="https://www.instagram.com/laser_hair_removal_calgary/" target="_blank" class="social__link">Instagram</a>
-                <a href="https://www.facebook.com/profile.php?id=61563491519738#" target="_blank" class="social__link">Facebook</a>
-                <a href="https://t.me/Holub_O" target="_blank" class="social__link">Telegram</a>
+                <!-- <a href="https://www.facebook.com/profile.php?id=61563491519738#" target="_blank" class="social__link">Facebook</a>
+                <a href="https://t.me/Holub_O" target="_blank" class="social__link">Telegram</a> -->
               </div>
             </div>
           </div>
@@ -552,8 +524,6 @@
               <select required>
                 <option value="">Select service</option>
                 <option value="consultation">Consultation</option>
-                <option value="permanent-makeup">Permanent Makeup</option>
-                <option value="facial">Facial Care</option>
                 <option value="other">Other</option>
               </select>
               <textarea placeholder="Comment (optional)" rows="4"></textarea>
@@ -580,7 +550,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination } from 'swiper/modules'
 
@@ -597,6 +567,17 @@ const modules = [Navigation, Pagination]
 // Swiper functionality
 const swiperInstance = ref(null)
 const activeSlide = ref(0)
+
+// Background images for each slide
+const backgroundImages = [
+  '/images/hero_bg.jpg', // Slide 1 - SET 1 "MY LOVELY"
+  '/images/hero_bg_2.jpg', // Slide 2 - SET 2 "MY LOVELY" 
+  '/images/hero_bg_3.jpg'     // Slide 3 - SET 3 "ALL INCLUDES"
+]
+
+const currentBackgroundImage = computed(() => {
+  return backgroundImages[activeSlide.value] || backgroundImages[0]
+})
 
 // Navigation items data
 const navigationItems = [
@@ -693,46 +674,46 @@ const reviews = ref([
 // Before & After Results data
 const beforeAfterResults = ref([
   {
-    area: 'Legs (Full)',
+    area: 'UNDERARMS',
     before: '/images/before_1.jpg',
     after: '/images/after_1.jpg',
-    sessions: '6-8',
-    timeline: '8 months'
+    sessions: '1',
+    timeline: '1 months'
   },
   {
-    area: 'Bikini Area',
+    area: 'FACE',
     before: '/images/before_2.jpg',
     after: '/images/after_2.jpg',
-    sessions: '5-7',
-    timeline: '6 months'
+    sessions: '4',
+    timeline: '4 months'
   },
   {
-    area: 'Male Chest & Arms',
+    area: 'BRAZILIAN',
     before: '/images/before_3.jpg',
     after: '/images/after_3.jpg',
-    sessions: '6-10',
+    sessions: '10',
     timeline: '10 months'
   },
   {
-    area: 'Full Body (Female)',
+    area: 'UNDERARMS',
     before: '/images/before_4.jpg',
     after: '/images/after_4.jpg',
-    sessions: '8-12',
-    timeline: '12 months'
+    sessions: '4',
+    timeline: '4 months'
   },
   {
-    area: 'Full Body (Female)',
+    area: 'UNDERARMS',
     before: '/images/before_5.jpg',
     after: '/images/after_5.jpg',
-    sessions: '8-12',
-    timeline: '12 months'
+    sessions: '1',
+    timeline: '1 PROCEDURE'
   },
   {
-    area: 'Full Body (Female)',
+    area: 'BRAZILIAN',
     before: '/images/before_6.jpg',
     after: '/images/after_6.jpg',
-    sessions: '8-12',
-    timeline: '12 months'
+    sessions: '5',
+    timeline: '5 months'
   }
 ])
 
@@ -832,9 +813,9 @@ const toggleFaq = (index) => {
   right: 0;
   bottom: 0;
   opacity: 0.7;
-  background-image: url('/images/hero_bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero__container {
@@ -855,7 +836,7 @@ const toggleFaq = (index) => {
   align-items: center;
   padding-top: 70px;
   justify-items: start;
-  max-width: 70%;
+  max-width: 80%;
   padding-left: 10%;
 }
 
@@ -891,12 +872,32 @@ const toggleFaq = (index) => {
   background: linear-gradient(to right, #ec4899, #db2777);
 }
 
+.hero__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero__list li {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.hero__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  color: #ec4899;
+  font-weight: bold;
+}
+
 .hero__description {
   font-size: 1.25rem;
   color: #d1d5db;
   font-weight: 300;
   line-height: 1.6;
-  max-width: 32rem;
   margin: 0;
 }
 
@@ -1339,11 +1340,11 @@ const toggleFaq = (index) => {
 }
 
 .before-after__label--before {
-  background: rgba(239, 68, 68, 0.9);
+  background: rgb(87 22 60);
 }
 
 .before-after__label--after {
-  background: rgba(34, 197, 94, 0.9);
+  background: rgb(236 72 153);
 }
 
 .before-after__info {
@@ -1370,7 +1371,7 @@ const toggleFaq = (index) => {
 }
 
 .before-after__timeline {
-  background: #ec4899;
+  background: #180118;
   color: white;
   font-size: 0.75rem;
   font-weight: 600;
@@ -1788,6 +1789,9 @@ const toggleFaq = (index) => {
   color: #111827;
   font-weight: 500;
   margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center
 }
 
 .social__links {
@@ -1960,6 +1964,7 @@ const toggleFaq = (index) => {
   flex-direction: row !important;
   gap: 1.5rem !important;
   justify-content: center !important;
+  display: none !important;
 }
 
 .hero__swiper .swiper-pagination-bullet {
