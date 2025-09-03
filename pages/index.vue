@@ -838,6 +838,9 @@ const toggleFaq = (index) => {
   justify-items: start;
   max-width: 80%;
   padding-left: 10%;
+  @media (max-width: 820px) {
+    max-width: 100%;
+  }
 }
 
 .hero__text-section {
@@ -850,6 +853,9 @@ const toggleFaq = (index) => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  @media (max-width: 820px) {
+    gap: 10px;
+  }
 }
 
 /* Title Elements */
@@ -876,6 +882,9 @@ const toggleFaq = (index) => {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  @media (max-width: 820px) {
+    gap: 0;
+  }
 }
 
 .hero__list li {
@@ -883,6 +892,9 @@ const toggleFaq = (index) => {
   color: #d1d5db;
   font-weight: 300;
   line-height: 1.6;
+  @media (max-width: 820px) {
+    font-size: 12px;
+  }
 }
 
 .hero__list li::before {
@@ -1011,7 +1023,7 @@ const toggleFaq = (index) => {
   }
 
   .hero__title {
-    font-size: 2.5rem;
+    font-size: 38px;
     line-height: 1.1;
   }
 
