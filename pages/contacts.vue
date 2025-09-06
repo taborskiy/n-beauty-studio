@@ -1,139 +1,104 @@
 <template>
-  <div class="py-12">
-    <div class="container mx-auto px-4">
-      <h1 class="text-4xl font-light text-center mb-12">Contact Us</h1>
-
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Contact Information -->
-        <div>
-          <div class="mb-8">
-            <h2 class="text-2xl font-light mb-4">Get in Touch</h2>
-            <p class="text-gray-600 mb-6">We'd love to hear from you. Please fill out the form or use our contact information below.</p>
-            
-            <div class="space-y-4">
-              <div class="flex items-start space-x-4">
-                <span class="text-xl">📍</span>
+  <div>
+    <!-- Contacts Section -->
+    <section class="contacts section">
+      <div class="container">
+        <div class="contacts__content">
+          <div class="contacts__info">
+            <h2 class="section__title">Contacts</h2>
+            <div class="section__divider"></div>
+            <div class="contacts__details">
+              <div class="contact__item">
+                <div class="contact__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
                 <div>
-                  <h3 class="font-medium">Address</h3>
-                  <p class="text-gray-600">Address suite 209  - 264 <br>Midpark Way SE, Calgary , Alberta, T2X 1J6</p>
+                  <h4>Address</h4>
+                  <p>Address suite 209  - 264 Midpark Way SE, Calgary , Alberta, T2X 1J6</p>
                 </div>
               </div>
-              
-              <div class="flex items-start space-x-4">
-                <span class="text-xl">📞</span>
+              <div class="contact__item">
+                <div class="contact__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                </div>
                 <div>
-                  <h3 class="font-medium">Phone</h3>
-                  <p class="text-gray-600">+1 (555) 123-4567</p>
+                  <h4>Phone</h4>
+                  <p>+1 368-886-5148</p>
                 </div>
               </div>
-              
-              <div class="flex items-start space-x-4">
-                <span class="text-xl">✉️</span>
-                <div>
-                  <h3 class="font-medium">Email</h3>
-                  <p class="text-gray-600">info@nbeautystudio.com</p>
+              <div class="contact__item">
+                <div class="contact__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
                 </div>
+                <div>
+                  <h4>Working Hours</h4>
+                  <p>9 a.m. - 19 p.m</p>
+                </div>
+              </div>
+              <div class="contact__item">
+                <div class="contact__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <p>go82350@gmail.com </p>
+                </div>
+              </div>
+            </div>
+            <div class="contacts__social">
+              <h4>Social Media</h4>
+              <div class="social__links">
+                <a href="https://www.instagram.com/laser_hair_removal_calgary/" target="_blank" class="social__link">Instagram</a>
               </div>
             </div>
           </div>
-
-          <div>
-            <h2 class="text-2xl font-light mb-4">Working Hours</h2>
-            <div class="space-y-2">
-              <p class="flex justify-between">
-                <span>Monday - Friday</span>
-                <span>9:00 AM - 8:00 PM</span>
-              </p>
-              <p class="flex justify-between">
-                <span>Saturday</span>
-                <span>10:00 AM - 6:00 PM</span>
-              </p>
-              <p class="flex justify-between">
-                <span>Sunday</span>
-                <span>Closed</span>
-              </p>
-            </div>
+          <div class="contacts__form">
+            <h3>Book a Consultation</h3>
+            <form @submit.prevent="handleSubmit" class="contact__form">
+              <input type="text" v-model="form.name" placeholder="Your name" required>
+              <input type="tel" v-model="form.phone" placeholder="Phone number" required>
+              <select v-model="form.service" required>
+                <option value="">Select service</option>
+                <option value="consultation">Consultation</option>
+                <option value="other">Other</option>
+              </select>
+              <textarea v-model="form.message" placeholder="Comment (optional)" rows="4"></textarea>
+              <button type="submit" class="form__submit">Book Now</button>
+            </form>
           </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div>
-          <form @submit.prevent="handleSubmit" class="space-y-6">
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-              <input
-                type="text"
-                id="name"
-                v-model="form.name"
-                class="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gray-200 focus:border-gray-400"
-                required
-              />
-            </div>
-
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <input
-                type="email"
-                id="email"
-                v-model="form.email"
-                class="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gray-200 focus:border-gray-400"
-                required
-              />
-            </div>
-
-            <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                v-model="form.phone"
-                class="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gray-200 focus:border-gray-400"
-                required
-              />
-            </div>
-
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-              <textarea
-                id="message"
-                v-model="form.message"
-                rows="4"
-                class="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-gray-200 focus:border-gray-400"
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full bg-gray-900 text-white py-3 px-6 rounded-sm hover:bg-gray-800 transition"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-        <div 
-          class="map-wrapper"
-        >
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4215.692014985311!2d-114.06529220000002!3d50.911549400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717680a4e55555%3A0x4c27cac3d85a7b2f!2zMjY0IE1pZHBhcmsgV2F5IFNFICMyMDksIENhbGdhcnksIEFCIFQyWCAxSjYsINCa0LDQvdCw0LTQsA!5e1!3m2!1sru!2sua!4v1749798038188!5m2!1sru!2sua" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <div class="map-wrapper">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4215.692014985311!2d-114.06529220000002!3d50.911549400000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53717680a4e55555%3A0x4c27cac3d85a7b2f!2zMjY0IE1pZHBhcmsgV2F5IFNFICMyMDksIENhbGdhcnksIEFCIFQyWCAxSjYsINCa0LDQvdCw0LTQsA!5e1!3m2!1sru!2sua!4v1749798038188!5m2!1sru!2sua" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 const form = ref({
   name: '',
-  email: '',
   phone: '',
+  service: '',
   message: ''
 })
 
@@ -143,15 +108,181 @@ const handleSubmit = () => {
   // Reset form
   form.value = {
     name: '',
-    email: '',
     phone: '',
+    service: '',
     message: ''
   }
 }
-</script> 
+</script>
 
 <style scoped>
-./* Mobile 375px and smaller */
+/* Common Section Styles */
+.section {
+  padding: 3rem 0;
+}
+
+.container {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section__title {
+  font-size: 3rem;
+  font-weight: 200;
+  color: #111827;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section__divider {
+  width: 6rem;
+  height: 2px;
+  background: linear-gradient(to right, #ec4899, #db2777);
+  margin: 0 auto 2rem;
+}
+
+/* Contacts Section */
+.contacts__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+.contacts__info {
+  text-align: center;
+}
+
+.contacts__details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+}
+
+.contact__icon {
+  width: 2rem;
+  height: 2rem;
+  color: #ec4899;
+  flex-shrink: 0;
+}
+
+.contact__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact__item h4 {
+  color: #111827;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact__item p {
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.contacts__social h4 {
+  color: #111827;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center
+}
+
+.social__links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social__link {
+  color: #ec4899;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social__link:hover {
+  color: #db2777;
+}
+
+.contacts__form {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.contacts__form h3 {
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact__form input,
+.contact__form select,
+.contact__form textarea {
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.contact__form input:focus,
+.contact__form select:focus,
+.contact__form textarea:focus {
+  outline: none;
+  border-color: #ec4899;
+}
+
+.form__submit {
+  background: #ec4899;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form__submit:hover {
+  background: #db2777;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .contacts__content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contacts__details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contacts__info {
+    text-align: left;
+  }
+}
+
+/* Mobile 375px and smaller */
 @media (max-width: 600px) {
   .map-wrapper {
     padding-bottom: 150% !important;
@@ -161,14 +292,17 @@ const handleSubmit = () => {
 
 .map-wrapper {
   width: 100%;
-  /* height: 100%; */
   padding-bottom: 50%;
   position: relative;
-  /* border-radius: 10px; */
   overflow: hidden;
-  padding-bottom: 50%;
   margin-top: 40px;
   border-radius: 4px;
   grid-column: span 2;
+}
+
+.map-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>
