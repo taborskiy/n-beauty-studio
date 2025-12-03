@@ -529,9 +529,11 @@
               <input 
                 type="tel" 
                 v-model="form.phone" 
-                placeholder="Phone number" 
+                @input="handlePhoneInput"
+                placeholder="+1 (XXX) XXX-XXXX" 
                 required
                 :disabled="isSubmitting"
+                maxlength="18"
               >
               <select v-model="form.service" required :disabled="isSubmitting">
                 <option value="">Select service</option>
@@ -627,6 +629,35 @@ const resetForm = () => {
   }
 }
 
+// Функція для форматування телефону (канадський формат)
+const formatPhone = (value) => {
+  // Видаляємо всі нецифрові символи
+  const numbers = value.replace(/\D/g, '')
+  
+  // Обмежуємо до 11 цифр (1 + 10 цифр)
+  const truncated = numbers.substring(0, 11)
+  
+  // Форматуємо в канадський формат +1 (XXX) XXX-XXXX
+  if (truncated.length === 0) return ''
+  if (truncated.length <= 1) return `+1`
+  if (truncated.length <= 4) return `+1 (${truncated.substring(1)}`
+  if (truncated.length <= 7) return `+1 (${truncated.substring(1, 4)}) ${truncated.substring(4)}`
+  return `+1 (${truncated.substring(1, 4)}) ${truncated.substring(4, 7)}-${truncated.substring(7)}`
+}
+
+// Валідація канадського телефону
+const validatePhone = (phone) => {
+  const numbers = phone.replace(/\D/g, '')
+  // Канадський номер: 1 + 10 цифр
+  return numbers.length === 11 && numbers.startsWith('1')
+}
+
+// Обробка введення телефону
+const handlePhoneInput = (event) => {
+  const formatted = formatPhone(event.target.value)
+  form.value.phone = formatted
+}
+
 const handleSubmit = async () => {
   if (isSubmitting.value) return
   
@@ -634,39 +665,80 @@ const handleSubmit = async () => {
   
   try {
     // Валідація на клієнті
-    if (!form.value.name.trim() || !form.value.phone.trim() || !form.value.service) {
-      modalMessage.value = 'Please fill in all required fields.'
+    if (!form.value.name.trim()) {
+      modalMessage.value = 'Please enter your name.'
+      modalTitle.value = 'Validation Error'
+      showModal.value = true
+      return
+    }
+    
+    if (!form.value.phone.trim()) {
+      modalMessage.value = 'Please enter your phone number.'
+      modalTitle.value = 'Validation Error'
+      showModal.value = true
+      return
+    }
+    
+    if (!validatePhone(form.value.phone)) {
+      modalMessage.value = 'Please enter a valid Canadian phone number.'
+      modalTitle.value = 'Validation Error'
+      showModal.value = true
+      return
+    }
+    
+    if (!form.value.service) {
+      modalMessage.value = 'Please select a service.'
       modalTitle.value = 'Validation Error'
       showModal.value = true
       return
     }
 
-    const formData = {
-      name: form.value.name.trim(),
-      phone: form.value.phone.trim(),
-      service: form.value.service,
-      message: form.value.message.trim()
-    }
+    // Формування повідомлення для Telegram
+    const text = `🏥 Нова заявка з Laser Nice Beauty:
+👤 Ім'я: ${form.value.name.trim()}
+📞 Телефон: ${form.value.phone.trim()}
+💅 Послуга: ${form.value.service}${form.value.message.trim() ? `
+📝 Повідомлення: ${form.value.message.trim()}` : ''}
+📅 Дата: ${new Date().toLocaleString('uk-UA', { 
+  timeZone: 'Europe/Kiev',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit'
+})}`
 
-    console.log('Sending form data:', formData)
+    // Налаштування Telegram
+    const token = '8559796605:AAHHohPIr72iyrzOUf6npG59NBldEO8GiFY'
+    const chatId = '-4980152340'
+    const url = `https://api.telegram.org/bot${token}/sendMessage`
 
-    const response = await $fetch('/api/telegram', {
+    console.log('Sending to Telegram:', { chatId, text })
+
+    const response = await fetch(url, {
       method: 'POST',
-      body: formData
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: text
+      })
     })
 
-    console.log('Response data:', response)
+    const data = await response.json()
+    console.log('Telegram response:', data)
     
-    if (response.ok) {
+    if (data.ok) {
       modalMessage.value = 'Thank you for your message! We will get back to you soon.'
       modalTitle.value = 'Success'
       showModal.value = true
       resetForm()
     } else {
-      modalMessage.value = response.message || 'Sorry, there was an error sending your message. Please try again.'
+      modalMessage.value = data.description || 'Sorry, there was an error sending your message. Please try again.'
       modalTitle.value = 'Error'
       showModal.value = true
-      console.error('Server error:', response)
+      console.error('Telegram error:', data)
     }
   } catch (error) {
     console.error('Form submission error:', error)
@@ -2008,6 +2080,17 @@ const toggleFaq = (index) => {
   background-color: #f3f4f6;
   cursor: not-allowed;
   opacity: 0.6;
+}
+
+/* Стилі для поля телефону */
+.contact__form input[type="tel"] {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.contact__form input[type="tel"]:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
 }
 
 /* Modal Styles */
