@@ -518,16 +518,41 @@
           </div>
           <div class="contacts__form">
             <h3>Book a Consultation</h3>
-            <form class="contact__form">
-              <input type="text" placeholder="Your name" required>
-              <input type="tel" placeholder="Phone number" required>
-              <select required>
+            <form @submit.prevent="handleSubmit" class="contact__form">
+              <input 
+                type="text" 
+                v-model="form.name" 
+                placeholder="Your name" 
+                required
+                :disabled="isSubmitting"
+              >
+              <input 
+                type="tel" 
+                v-model="form.phone" 
+                placeholder="Phone number" 
+                required
+                :disabled="isSubmitting"
+              >
+              <select v-model="form.service" required :disabled="isSubmitting">
                 <option value="">Select service</option>
-                <option value="consultation">Consultation</option>
-                <option value="other">Other</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Other">Other</option>
               </select>
-              <textarea placeholder="Comment (optional)" rows="4"></textarea>
-              <button type="submit" class="form__submit">Book Now</button>
+              <textarea 
+                v-model="form.message" 
+                placeholder="Comment (optional)" 
+                rows="4"
+                :disabled="isSubmitting"
+              ></textarea>
+              <button 
+                type="submit" 
+                class="form__submit"
+                :disabled="isSubmitting"
+                :class="{ 'submitting': isSubmitting }"
+              >
+                <span v-if="isSubmitting">Sending...</span>
+                <span v-else>Book Now</span>
+              </button>
             </form>
           </div>
           <div 
@@ -546,6 +571,22 @@
         </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div v-if="showModal" class="modal-overlay" @click="closeModal">
+      <div class="modal" @click.stop>
+        <div class="modal-header">
+          <h3>{{ modalTitle }}</h3>
+          <button @click="closeModal" class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>{{ modalMessage }}</p>
+        </div>
+        <div class="modal-footer">
+          <button @click="closeModal" class="modal-btn">OK</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -563,6 +604,83 @@ import {laserMenServices, laserWomenServices} from '../data/price.js'
 
 // Swiper modules
 const modules = [Navigation, Pagination]
+
+// Form functionality
+const form = ref({
+  name: '',
+  phone: '',
+  service: '',
+  message: ''
+})
+
+const isSubmitting = ref(false)
+const showModal = ref(false)
+const modalTitle = ref('')
+const modalMessage = ref('')
+
+const resetForm = () => {
+  form.value = {
+    name: '',
+    phone: '',
+    service: '',
+    message: ''
+  }
+}
+
+const handleSubmit = async () => {
+  if (isSubmitting.value) return
+  
+  isSubmitting.value = true
+  
+  try {
+    // Валідація на клієнті
+    if (!form.value.name.trim() || !form.value.phone.trim() || !form.value.service) {
+      modalMessage.value = 'Please fill in all required fields.'
+      modalTitle.value = 'Validation Error'
+      showModal.value = true
+      return
+    }
+
+    const formData = {
+      name: form.value.name.trim(),
+      phone: form.value.phone.trim(),
+      service: form.value.service,
+      message: form.value.message.trim()
+    }
+
+    console.log('Sending form data:', formData)
+
+    const response = await $fetch('/api/telegram', {
+      method: 'POST',
+      body: formData
+    })
+
+    console.log('Response data:', response)
+    
+    if (response.ok) {
+      modalMessage.value = 'Thank you for your message! We will get back to you soon.'
+      modalTitle.value = 'Success'
+      showModal.value = true
+      resetForm()
+    } else {
+      modalMessage.value = response.message || 'Sorry, there was an error sending your message. Please try again.'
+      modalTitle.value = 'Error'
+      showModal.value = true
+      console.error('Server error:', response)
+    }
+  } catch (error) {
+    console.error('Form submission error:', error)
+    modalMessage.value = `Error: ${error.message}. Please check console for details.`
+    modalTitle.value = 'Network Error'
+    showModal.value = true
+  } finally {
+    isSubmitting.value = false
+  }
+}
+
+const closeModal = () => {
+  showModal.value = false
+}
 
 // Swiper functionality
 const swiperInstance = ref(null)
@@ -1871,6 +1989,113 @@ const toggleFaq = (index) => {
 }
 
 .form__submit:hover {
+  background: #db2777;
+}
+
+.form__submit:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.form__submit.submitting {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.contact__form input:disabled,
+.contact__form select:disabled,
+.contact__form textarea:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #374151;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-body p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-btn {
+  background: #ec4899;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-btn:hover {
   background: #db2777;
 }
 
