@@ -633,34 +633,45 @@ const handleSubmit = async () => {
   isSubmitting.value = true
   
   try {
-    const formData = new FormData()
-    formData.append('name', form.value.name)
-    formData.append('phone', form.value.phone)
-    formData.append('service', form.value.service)
-    formData.append('message', form.value.message)
+    // Валідація на клієнті
+    if (!form.value.name.trim() || !form.value.phone.trim() || !form.value.service) {
+      modalMessage.value = 'Please fill in all required fields.'
+      modalTitle.value = 'Validation Error'
+      showModal.value = true
+      return
+    }
 
-    const response = await fetch('/telegram.php', {
+    const formData = {
+      name: form.value.name.trim(),
+      phone: form.value.phone.trim(),
+      service: form.value.service,
+      message: form.value.message.trim()
+    }
+
+    console.log('Sending form data:', formData)
+
+    const response = await $fetch('/api/telegram', {
       method: 'POST',
       body: formData
     })
 
-    const data = await response.json()
+    console.log('Response data:', response)
     
-    if (data.ok) {
+    if (response.ok) {
       modalMessage.value = 'Thank you for your message! We will get back to you soon.'
       modalTitle.value = 'Success'
       showModal.value = true
       resetForm()
     } else {
-      modalMessage.value = 'Sorry, there was an error sending your message. Please try again.'
+      modalMessage.value = response.message || 'Sorry, there was an error sending your message. Please try again.'
       modalTitle.value = 'Error'
       showModal.value = true
-      console.error(data)
+      console.error('Server error:', response)
     }
   } catch (error) {
     console.error('Form submission error:', error)
-    modalMessage.value = 'Sorry, there was an error sending your message. Please try again.'
-    modalTitle.value = 'Error'
+    modalMessage.value = `Error: ${error.message}. Please check console for details.`
+    modalTitle.value = 'Network Error'
     showModal.value = true
   } finally {
     isSubmitting.value = false
